@@ -1,12 +1,2799 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AZ Valuaciones</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AZ Valuaciones | Peritos en Valuación Inmobiliaria y Comercial</title>
+  <meta name="description" content="AZ Valuaciones. Peritos valuadores inmobiliarios, comerciales y de terrenos certificados ante Infonavit, Fovissste, Banjército y SHF. Validez oficial y precisión en Estado de México y CDMX.">
+  <meta name="theme-color" content="#F7F5F0">
+  
+  <!-- Favicon SVG Embebido -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231A1D20'/%3E%3Cpath d='M32 12L12 27h6v23h28V27h6L32 12z' fill='none' stroke='%23B08D57' stroke-width='2.5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='serif' font-weight='bold' font-size='16' fill='%23B08D57'%3EAZ%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Cinzel, Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       VARIABLES Y SISTEMA DE DISEÑO EDITORIAL INSTITUCIONAL (AZ VALUACIONES)
+       ========================================================================== */
+    :root {
+      --bg-ivory: #F7F5F0;
+      --bg-ivory-alt: #EFECE4;
+      --bg-white: #FFFFFF;
+      --charcoal-900: #1A1D20;
+      --charcoal-800: #25292E;
+      --charcoal-600: #4A5058;
+      --charcoal-500: #68707A;
+      --bronze-500: #B08D57;
+      --bronze-600: #967440;
+      --bronze-700: #7A5C30;
+      --bronze-100: rgba(176, 141, 87, 0.12);
+      --bronze-200: rgba(176, 141, 87, 0.25);
+      --border-subtle: rgba(26, 29, 32, 0.08);
+      --border-medium: rgba(26, 29, 32, 0.14);
+      --shadow-sm: 0 4px 16px rgba(26, 29, 32, 0.04);
+      --shadow-md: 0 12px 32px rgba(26, 29, 32, 0.07);
+      --shadow-lg: 0 24px 48px rgba(26, 29, 32, 0.11);
+      --shadow-bronze: 0 10px 25px rgba(176, 141, 87, 0.28);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-display: 'Outfit', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* ==========================================================================
+       RESET Y ESTILOS BASE
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--charcoal-900);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       BOTONES Y COMPONENTES REUTILIZABLES
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--bronze-500) 0%, var(--bronze-600) 100%);
+      color: var(--bg-white);
+      box-shadow: var(--shadow-bronze);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--bronze-600) 0%, var(--bronze-700) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(150, 116, 64, 0.36);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-white);
+      color: var(--charcoal-900);
+      border-color: var(--border-medium);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--bronze-500);
+      color: var(--bronze-600);
+      transform: translateY(-2px);
+    }
+
+    .section-header {
+      max-width: 720px;
+      margin: 0 auto 56px auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--bronze-600);
+      background-color: var(--bronze-100);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 3.4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--charcoal-900);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--charcoal-600);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       HEADER / NAVEGACIÓN
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background-color: rgba(247, 245, 240, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .site-header.scrolled {
+      background-color: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 84px;
+      gap: 20px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-svg-mark {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+    }
+
+    .brand-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.12rem;
+      letter-spacing: 0.1em;
+      color: var(--charcoal-900);
+      line-height: 1.15;
+    }
+
+    .brand-subtitle {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--bronze-600);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-link {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--charcoal-600);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--bronze-500);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--charcoal-900);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-actions .btn-primary {
+      padding: 11px 22px;
+      font-size: 0.88rem;
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: var(--bg-white);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 9px;
+      color: var(--charcoal-900);
+      cursor: pointer;
+    }
+
+    .mobile-toggle svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Drawer móvil */
+    .mobile-nav-drawer {
+      position: fixed;
+      top: 84px;
+      left: 0;
+      right: 0;
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-medium);
+      box-shadow: var(--shadow-lg);
+      padding: 20px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 890;
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.35s ease, opacity 0.25s ease;
+    }
+
+    .mobile-nav-drawer.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-drawer a:not(.btn) {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-weight: 500;
+      color: var(--charcoal-800);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mobile-nav-drawer a:not(.btn):hover {
+      background-color: var(--bg-ivory);
+      color: var(--bronze-600);
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding: 68px 0 84px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(176, 141, 87, 0.14) 0%, rgba(247, 245, 240, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bronze-600);
+      background-color: var(--bg-white);
+      border: 1px solid var(--bronze-200);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.35rem, 4.3vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      color: var(--charcoal-900);
+      margin-bottom: 22px;
+    }
+
+    .hero-title span {
+      display: block;
+      color: var(--bronze-600);
+    }
+
+    .hero-lead {
+      font-size: 1.08rem;
+      color: var(--charcoal-600);
+      line-height: 1.75;
+      margin-bottom: 34px;
+      max-width: 580px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 42px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hero-badge-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--charcoal-800);
+    }
+
+    .hero-badge-item svg {
+      width: 19px;
+      height: 19px;
+      color: var(--bronze-600);
+      flex-shrink: 0;
+    }
+
+    /* Hero Showcase Visual (Emblema 3D Bronce sobre Relieve Arquitectónico) */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #23272B 0%, #141619 100%);
+      padding: 14px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(176, 141, 87, 0.35);
+    }
+
+    .hero-mockup-canvas {
+      position: relative;
+      border-radius: calc(var(--radius-lg) - 6px);
+      overflow: hidden;
+      aspect-ratio: 4 / 4.2;
+      background: radial-gradient(circle at 30% 25%, #2D3238 0%, #16181B 75%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    /* Textura arquitectónica sutil SVG en el fondo del mockup */
+    .hero-mockup-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.14;
+      pointer-events: none;
+    }
+
+    .hero-mockup-emblem {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-mockup-title {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: #E7D2AD;
+      margin-top: 18px;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-mockup-sub {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--bronze-500);
+      margin-top: 8px;
+    }
+
+    .hero-mockup-divider {
+      width: 64px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--bronze-500), transparent);
+      margin: 16px auto 12px;
+    }
+
+    .hero-mockup-caption {
+      font-size: 0.78rem;
+      color: rgba(247, 245, 240, 0.65);
+      letter-spacing: 0.06em;
+    }
+
+    /* Tarjeta flotante de certificación */
+    .hero-floating-card {
+      position: absolute;
+      bottom: -20px;
+      left: -22px;
+      background-color: var(--bg-white);
+      border: 1px solid var(--bronze-200);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow-lg);
+      z-index: 5;
+    }
+
+    .hero-floating-seal {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--charcoal-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero-floating-card-info h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      line-height: 1.2;
+    }
+
+    .hero-floating-card-info p {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--bronze-600);
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       CINTILLO INSTITUCIONAL
+       ========================================================================== */
+    .trust-strip {
+      background-color: var(--bg-white);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 26px 0;
+    }
+
+    .trust-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .trust-label {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--charcoal-500);
+    }
+
+    .trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .trust-pill {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--charcoal-800);
+      background-color: var(--bg-ivory);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+    }
+
+    /* ==========================================================================
+       SECCIÓN DE ESPECIALIDADES / SERVICIOS
+       ========================================================================== */
+    .services-section {
+      padding: 96px 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::top {
+      content: '';
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--bronze-200);
+    }
+
+    .service-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background-color: var(--bronze-100);
+      color: var(--bronze-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover .service-icon-wrap {
+      background-color: var(--bronze-500);
+      color: var(--bg-white);
+    }
+
+    .service-icon-wrap svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 12px;
+    }
+
+    .service-desc {
+      font-size: 0.96rem;
+      color: var(--charcoal-600);
+      line-height: 1.7;
+      margin-bottom: 22px;
+      flex-grow: 1;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .service-tag {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--bronze-700);
+      background-color: var(--bg-ivory);
+      border: 1px solid var(--bronze-200);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--bronze-600);
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .service-link svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.25s ease;
+    }
+
+    .service-link:hover {
+      color: var(--charcoal-900);
+    }
+
+    .service-link:hover svg {
+      transform: translateX(5px);
+    }
+
+    /* ==========================================================================
+       COTIZADOR INTERACTIVO
+       ========================================================================== */
+    .calculator-section {
+      padding: 96px 0;
+      background-color: var(--bg-ivory-alt);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .calculator-card {
+      background-color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+    }
+
+    .calc-form-wrap {
+      padding: 42px;
+    }
+
+    .calc-form-group {
+      margin-bottom: 26px;
+    }
+
+    .calc-form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .calc-label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--charcoal-900);
+      margin-bottom: 12px;
+    }
+
+    .calc-options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .calc-radio-card {
+      position: relative;
+    }
+
+    .calc-radio-card input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .calc-radio-label {
+      display: flex;
+      align-items: center;
+      padding: 14px 16px;
+      background-color: var(--bg-ivory);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--charcoal-800);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .calc-radio-card input[type="radio"]:checked + .calc-radio-label {
+      background-color: var(--bronze-100);
+      border-color: var(--bronze-500);
+      color: var(--charcoal-900);
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(176, 141, 87, 0.14);
+    }
+
+    .calc-select,
+    .calc-input {
+      width: 100%;
+      padding: 13px 16px;
+      background-color: var(--bg-ivory);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--charcoal-900);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .calc-select:focus,
+    .calc-input:focus {
+      outline: none;
+      background-color: var(--bg-white);
+      border-color: var(--bronze-500);
+      box-shadow: 0 0 0 3px var(--bronze-100);
+    }
+
+    /* Panel derecho oscuro de resumen */
+    .calc-result-panel {
+      background: linear-gradient(160deg, var(--charcoal-900) 0%, #111315 100%);
+      color: var(--bg-white);
+      padding: 42px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-left: 1px solid rgba(176, 141, 87, 0.25);
+    }
+
+    .calc-result-header h4 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #E7D2AD;
+      margin-bottom: 8px;
+    }
+
+    .calc-result-header p {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.55;
+    }
+
+    .calc-summary-body {
+      margin: 26px 0;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .calc-summary-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .calc-summary-item span:first-child {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .calc-summary-item span:last-child {
+      font-weight: 600;
+      color: var(--bg-white);
+      text-align: right;
+    }
+
+    .calc-delivery-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: rgba(176, 141, 87, 0.14);
+      border: 1px solid rgba(176, 141, 87, 0.35);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-bottom: 24px;
+    }
+
+    .calc-delivery-badge svg {
+      width: 24px;
+      height: 24px;
+      color: var(--bronze-500);
+      flex-shrink: 0;
+    }
+
+    .calc-delivery-badge h5 {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #E7D2AD;
+    }
+
+    .calc-delivery-badge p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .calc-whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 22px;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.96rem;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 10px 24px rgba(37, 211, 102, 0.28);
+      transition: var(--transition);
+    }
+
+    .calc-whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(37, 211, 102, 0.38);
+    }
+
+    /* ==========================================================================
+       EL PROCESO EN 4 PASOS
+       ========================================================================== */
+    .process-section {
+      padding: 96px 0;
+    }
+
+    .process-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .process-step-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .process-step-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--bronze-200);
+      box-shadow: var(--shadow-md);
+    }
+
+    .process-num {
+      font-family: var(--font-serif);
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--bronze-500);
+      line-height: 1;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--bronze-200);
+      display: inline-block;
+    }
+
+    .process-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 10px;
+    }
+
+    .process-desc {
+      font-size: 0.92rem;
+      color: var(--charcoal-600);
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       DOCUMENTACIÓN REQUERIDA (PESTAÑAS INTERACTIVAS)
+       ========================================================================== */
+    .docs-section {
+      padding: 96px 0;
+      background-color: var(--bg-ivory-alt);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .docs-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      background-color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+      padding: 36px;
+    }
+
+    .docs-tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 34px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .docs-tab-btn {
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-medium);
+      background-color: var(--bg-ivory);
+      color: var(--charcoal-600);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .docs-tab-btn:hover {
+      border-color: var(--bronze-500);
+      color: var(--charcoal-900);
+    }
+
+    .docs-tab-btn.active {
+      background-color: var(--charcoal-900);
+      border-color: var(--charcoal-900);
+      color: #E7D2AD;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .docs-tab-pane {
+      display: none;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .docs-tab-pane.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .docs-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .docs-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px;
+      background-color: var(--bg-ivory);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .docs-list-item svg {
+      width: 24px;
+      height: 24px;
+      color: var(--bronze-600);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .docs-list-item h5 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 4px;
+    }
+
+    .docs-list-item p {
+      font-size: 0.88rem;
+      color: var(--charcoal-600);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       SHOWCASE DE IDENTIDAD & DIFERENCIADORES
+       ========================================================================== */
+    .showcase-section {
+      padding: 96px 0;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .showcase-image-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--bronze-200);
+      position: relative;
+      background-color: var(--charcoal-900);
+      aspect-ratio: 4 / 4.4;
+    }
+
+    .showcase-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .showcase-image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px;
+      background: linear-gradient(to top, rgba(26, 29, 32, 0.94) 0%, rgba(26, 29, 32, 0.45) 70%, transparent 100%);
+      color: var(--bg-white);
+    }
+
+    .showcase-image-overlay span {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: #E7D2AD;
+      text-transform: uppercase;
+    }
+
+    .showcase-image-overlay p {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .showcase-features {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .showcase-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background-color: var(--bg-white);
+      padding: 22px 24px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .showcase-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background-color: var(--bronze-100);
+      color: var(--bronze-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .showcase-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .showcase-feature-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 6px;
+    }
+
+    .showcase-feature-info p {
+      font-size: 0.92rem;
+      color: var(--charcoal-600);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SECCIÓN DE CONTACTO & UBICACIÓN
+       ========================================================================== */
+    .contact-section {
+      padding: 96px 0;
+      background-color: var(--bg-ivory-alt);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .contact-info-card {
+      background: linear-gradient(155deg, var(--charcoal-900) 0%, #121417 100%);
+      color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 40px 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-info-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #E7D2AD;
+      margin-bottom: 12px;
+    }
+
+    .contact-info-card > p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 32px;
+      line-height: 1.65;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-color: rgba(176, 141, 87, 0.16);
+      border: 1px solid rgba(176, 141, 87, 0.35);
+      color: var(--bronze-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-item-content h5 {
+      font-family: var(--font-display);
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #E7D2AD;
+      margin-bottom: 3px;
+    }
+
+    .contact-item-content p,
+    .contact-item-content a {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.5;
+    }
+
+    .contact-item-content a:hover {
+      color: var(--bronze-500);
+    }
+
+    .contact-form-card {
+      background-color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--charcoal-900);
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 13px 16px;
+      background-color: var(--bg-ivory);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      color: var(--charcoal-900);
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      background-color: var(--bg-white);
+      border-color: var(--bronze-500);
+      box-shadow: 0 0 0 3px var(--bronze-100);
+    }
+
+    textarea.form-control {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--charcoal-900);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 54px 0 32px;
+      border-top: 2px solid var(--bronze-600);
+    }
+
+    .footer-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .site-footer .brand-title {
+      color: var(--bg-white);
+    }
+
+    .footer-info-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-info-strip a:hover {
+      color: #E7D2AD;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E7D2AD;
+    }
+
+    .social-btn:hover {
+      background-color: var(--bronze-500);
+      color: var(--charcoal-900);
+      transform: translateY(-2px);
+    }
+
+    .social-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* ==========================================================================
+       BOTÓN FLOTANTE WHATSAPP
+       ========================================================================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      z-index: 880;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #25D366 0%, #1EBE5D 100%);
+      color: #FFFFFF;
+      padding: 13px 22px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.92rem;
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+      transition: var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 34px rgba(37, 211, 102, 0.45);
+    }
+
+    .whatsapp-float svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       MODAL SOLICITAR AVALÚO
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background-color: rgba(26, 29, 32, 0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-box {
+      background-color: var(--bg-white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--bronze-200);
+      width: 100%;
+      max-width: 520px;
+      max-height: 92vh;
+      overflow-y: auto;
+      padding: 36px 32px;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(16px) scale(0.98);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal-box {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border-subtle);
+      background-color: var(--bg-ivory);
+      color: var(--charcoal-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .modal-close-btn:hover {
+      background-color: var(--charcoal-900);
+      color: var(--bg-white);
+    }
+
+    .modal-close-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .modal-header {
+      margin-bottom: 24px;
+    }
+
+    .modal-header h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--charcoal-900);
+      margin-bottom: 6px;
+    }
+
+    .modal-header p {
+      font-size: 0.9rem;
+      color: var(--charcoal-600);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE DESIGN (TABLET & MÓVIL)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .hero-grid,
+      .calc-grid,
+      .showcase-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-floating-card {
+        left: 16px;
+        bottom: -16px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .services-grid,
+      .process-steps-grid,
+      .calc-options-grid,
+      .docs-list,
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-form-wrap,
+      .calc-result-panel,
+      .contact-form-card,
+      .contact-info-card,
+      .docs-wrapper {
+        padding: 26px 20px;
+      }
+
+      .hero {
+        padding: 44px 0 64px;
+      }
+
+      .whatsapp-float span {
+        display: none;
+      }
+
+      .whatsapp-float {
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>AZ Valuaciones</h1>
-  <p>Servicios de avalúo y valuación inmobiliaria.</p>
+
+  <!-- ==================== HEADER / BARRA DE NAVEGACIÓN ==================== -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <nav class="nav-wrapper">
+        <!-- Logotipo oficial SVG Vectorial -->
+        <a href="#inicio" class="brand-logo" aria-label="Ir al inicio de AZ Valuaciones">
+          <svg class="brand-svg-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="bronzeGradNav" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C9A870"/>
+                <stop offset="50%" stop-color="#B08D57"/>
+                <stop offset="100%" stop-color="#876636"/>
+              </linearGradient>
+            </defs>
+            <rect x="2" y="2" width="60" height="60" rx="14" fill="#1A1D20" stroke="url(#bronzeGradNav)" stroke-width="2"/>
+            <!-- Silueta arquitectónica minimalista -->
+            <path d="M14 29L32 14L50 29" stroke="url(#bronzeGradNav)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 26V49H45V26" stroke="url(#bronzeGradNav)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.75"/>
+            <!-- Monograma AZ -->
+            <text x="32" y="42" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="16" letter-spacing="1" fill="#E7D2AD">AZ</text>
+          </svg>
+          <div class="brand-text-wrap">
+            <span class="brand-title">AZ VALUACIONES</span>
+            <span class="brand-subtitle">Peritos Certificados</span>
+          </div>
+        </a>
+
+        <!-- Enlaces principales de navegación -->
+        <ul class="nav-links">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#servicios" class="nav-link">Especialidades</a></li>
+          <li><a href="#proceso" class="nav-link">Proceso</a></li>
+          <li><a href="#documentacion" class="nav-link">Documentación</a></li>
+          <li><a href="#cotizador" class="nav-link">Cotizador</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+
+        <!-- Botón de acción destacado -->
+        <div class="nav-actions">
+          <a href="#cotizador" class="btn btn-primary open-modal-btn">Solicitar Avalúo</a>
+          <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Menú desplegable para móviles -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <a href="#inicio" class="mobile-nav-link">Inicio</a>
+    <a href="#servicios" class="mobile-nav-link">Especialidades</a>
+    <a href="#proceso" class="mobile-nav-link">Proceso</a>
+    <a href="#documentacion" class="mobile-nav-link">Documentación</a>
+    <a href="#cotizador" class="mobile-nav-link">Cotizador</a>
+    <a href="#contacto" class="mobile-nav-link">Contacto</a>
+    <a href="#modal-solicitar" class="btn btn-primary open-modal-btn" style="margin-top: 16px; text-align: center;">Solicitar Avalúo</a>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Columna Izquierda: Mensaje de Valor y CTA -->
+          <div class="hero-content">
+            <span class="hero-tagline">✦ Expertos en Valuación Inmobiliaria</span>
+            <h1 class="hero-title">
+              Avalúos Inmobiliarios <span>Precisos y Certificados.</span>
+            </h1>
+            <p class="hero-lead">
+              Confidencialidad y precisión para sus activos. Obtenga una valoración imparcial, técnica y confiable para su propiedad, con el respaldo oficial de nuestros peritos valuadores certificados ante instituciones de crédito y notarías.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="#contacto" class="btn btn-primary open-modal-btn">Solicitar Avalúo</a>
+              <a href="#cotizador" class="btn btn-secondary">Calcular Cotización</a>
+            </div>
+
+            <!-- Respaldo y métricas en formato minimalista -->
+            <div class="hero-badges">
+              <div class="hero-badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span>Cédula y Registro Oficial</span>
+              </div>
+              <div class="hero-badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>Entrega en 48 a 72 hrs</span>
+              </div>
+              <div class="hero-badge-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Estricta Confidencialidad</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Showcase Visual con Emblema 3D Bronce sobre Relieve -->
+          <div class="hero-visual">
+            <div class="hero-image-frame">
+              <div class="hero-mockup-canvas" role="img" aria-label="AZ Valuaciones Logotipo 3D en acabado bronce sobre relieve">
+                <!-- Retícula arquitectónica decorativa -->
+                <svg class="hero-mockup-pattern" viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 70H400M0 140H400M0 210H400M0 280H400M0 350H400" stroke="#B08D57" stroke-width="0.8"/>
+                  <path d="M80 0V420M160 0V420M240 0V420M320 0V420" stroke="#B08D57" stroke-width="0.8"/>
+                  <circle cx="200" cy="195" r="135" stroke="#B08D57" stroke-width="1" stroke-dasharray="4 4"/>
+                  <circle cx="200" cy="195" r="165" stroke="#B08D57" stroke-width="0.6"/>
+                </svg>
+
+                <!-- Emblema 3D en bronce metálico -->
+                <div class="hero-mockup-emblem">
+                  <svg width="164" height="148" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="bronze3dMain" x1="15" y1="10" x2="165" y2="150" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#F2DFBE"/>
+                        <stop offset="35%" stop-color="#C8A46B"/>
+                        <stop offset="70%" stop-color="#9E7943"/>
+                        <stop offset="100%" stop-color="#6E5026"/>
+                      </linearGradient>
+                      <linearGradient id="bronze3dShadow" x1="0" y1="0" x2="0" y2="160" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#4B3517"/>
+                        <stop offset="100%" stop-color="#24190A"/>
+                      </linearGradient>
+                      <filter id="drop3d" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.65"/>
+                      </filter>
+                    </defs>
+                    <g filter="url(#drop3d)">
+                      <!-- Profundidad 3D -->
+                      <path d="M24 76L90 22L156 76" stroke="url(#bronze3dShadow)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, 4)"/>
+                      <path d="M40 68V138H140V68" stroke="url(#bronze3dShadow)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, 4)"/>
+                      <!-- Cubierta arquitectónica frontal -->
+                      <path d="M24 76L90 22L156 76" stroke="url(#bronze3dMain)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <!-- Chimenea / detalle estructural -->
+                      <path d="M124 38V50" stroke="url(#bronze3dMain)" stroke-width="6" stroke-linecap="round"/>
+                      <!-- Muros estructurales -->
+                      <path d="M40 68V138H140V68" stroke="url(#bronze3dMain)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <!-- Línea de basamento -->
+                      <line x1="26" y1="138" x2="154" y2="138" stroke="url(#bronze3dMain)" stroke-width="4" stroke-linecap="round"/>
+                      <!-- Monograma AZ en relieve -->
+                      <text x="90" y="114" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="46" letter-spacing="3" fill="url(#bronze3dMain)">AZ</text>
+                    </g>
+                  </svg>
+
+                  <div class="hero-mockup-title">AZ VALUACIONES</div>
+                  <div class="hero-mockup-sub">Peritos Valuadores Certificados</div>
+                  <div class="hero-mockup-divider"></div>
+                  <div class="hero-mockup-caption">Rigor Técnico • Validez Oficial • Precisión</div>
+                </div>
+              </div>
+
+              <!-- Tarjeta flotante con detalles de certificación -->
+              <div class="hero-floating-card">
+                <div class="hero-floating-seal" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 64 64" fill="none">
+                    <path d="M12 30L32 14L52 30" stroke="#B08D57" stroke-width="3" stroke-linecap="round"/>
+                    <text x="32" y="47" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="18" fill="#E7D2AD">AZ</text>
+                  </svg>
+                </div>
+                <div class="hero-floating-card-info">
+                  <h4>Dictámenes Oficiales</h4>
+                  <p>Infonavit • Fovissste • SHF</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CINTILLO INSTITUCIONAL ==================== -->
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-content">
+          <span class="trust-label">Validez oficial y reconocimiento ante:</span>
+          <div class="trust-pills">
+            <span class="trust-pill">INFONAVIT</span>
+            <span class="trust-pill">FOVISSSTE</span>
+            <span class="trust-pill">BANJÉRCITO</span>
+            <span class="trust-pill">SOCIEDAD HIPOTECARIA FEDERAL (SHF)</span>
+            <span class="trust-pill">NOTARÍAS PÚBLICAS</span>
+            <span class="trust-pill">INSTITUCIONES BANCARIAS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SECCIÓN DE ESPECIALIDADES / SERVICIOS ==================== -->
+    <section id="servicios" class="services-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Nuestras Especialidades</span>
+          <h2 class="section-title">Servicios de Valuación Profesional</h2>
+          <p class="section-desc">
+            Determinación técnica y rigurosa del valor comercial, catastral y de reposición de sus activos patrimoniales con estricto apego a las normas valuatorias vigentes.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Tarjeta 1: Avalúos Inmobiliarios -->
+          <article class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Avalúos Inmobiliarios</h3>
+            <p class="service-desc">
+              Valuaciones para compraventa, hipotecas y créditos. Aceptados por instituciones como Infonavit, Fovissste y Banjército para vivienda unifamiliar, departamentos y desarrollos.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">INFONAVIT</span>
+              <span class="service-tag">FOVISSSTE</span>
+              <span class="service-tag">BANJÉRCITO</span>
+            </div>
+            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo Inmobiliario">
+              <span>Consultar servicio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Tarjeta 2: Avalúos Comerciales -->
+          <article class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                <line x1="9" y1="22" x2="9" y2="22.01"></line>
+                <line x1="15" y1="22" x2="15" y2="22.01"></line>
+                <line x1="8" y1="6" x2="10" y2="6"></line>
+                <line x1="14" y1="6" x2="16" y2="6"></line>
+                <line x1="8" y1="10" x2="10" y2="10"></line>
+                <line x1="14" y1="10" x2="16" y2="10"></line>
+                <line x1="8" y1="14" x2="10" y2="14"></line>
+                <line x1="14" y1="14" x2="16" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Avalúos Comerciales</h3>
+            <p class="service-desc">
+              Determinación precisa del valor de mercado para locales, oficinas corporativas, plazas comerciales, bodegas y naves industriales para diversos fines comerciales y de arrendamiento.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">LOCALES</span>
+              <span class="service-tag">OFICINAS</span>
+              <span class="service-tag">BODEGAS</span>
+            </div>
+            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo Comercial">
+              <span>Consultar servicio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Tarjeta 3: Avalúos de Terrenos -->
+          <article class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Avalúos de Terrenos</h3>
+            <p class="service-desc">
+              Avalúos de terrenos urbanos, suburbanos, rurales y rústicos para desarrollo inmobiliario, proyectos de inversión patrimonial o partición legal de herencias y sucesiones.
+            </p>
+            <div class="service-tags">
+              <span class="service-tag">URBANOS</span>
+              <span class="service-tag">RÚSTICOS</span>
+              <span class="service-tag">HERENCIAS</span>
+            </div>
+            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo de Terrenos">
+              <span>Consultar servicio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== COTIZADOR INTERACTIVO ==================== -->
+    <section id="cotizador" class="calculator-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Estimación Inmediata</span>
+          <h2 class="section-title">Cotice su Avalúo en Línea</h2>
+          <p class="section-desc">
+            Complete los datos básicos de su propiedad para generar una cotización preliminar y contactar a un perito valuador con su solicitud lista.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-grid">
+            <!-- Formulario interactivo -->
+            <div class="calc-form-wrap">
+              <!-- 1. Tipo de Inmueble -->
+              <div class="calc-form-group">
+                <label class="calc-label">1. Seleccione el Tipo de Propiedad:</label>
+                <div class="calc-options-grid">
+                  <div class="calc-radio-card">
+                    <input type="radio" id="prop-casa" name="calc-property" value="Casa o Departamento" checked>
+                    <label for="prop-casa" class="calc-radio-label">
+                      <span>🏠 Casa / Departamento</span>
+                    </label>
+                  </div>
+                  <div class="calc-radio-card">
+                    <input type="radio" id="prop-terreno" name="calc-property" value="Terreno o Lote">
+                    <label for="prop-terreno" class="calc-radio-label">
+                      <span>📐 Terreno / Lote</span>
+                    </label>
+                  </div>
+                  <div class="calc-radio-card">
+                    <input type="radio" id="prop-comercial" name="calc-property" value="Local u Oficina">
+                    <label for="prop-comercial" class="calc-radio-label">
+                      <span>🏢 Local / Oficina</span>
+                    </label>
+                  </div>
+                  <div class="calc-radio-card">
+                    <input type="radio" id="prop-industrial" name="calc-property" value="Nave o Bodega">
+                    <label for="prop-industrial" class="calc-radio-label">
+                      <span>🏭 Bodega / Industrial</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. Finalidad del Avalúo -->
+              <div class="calc-form-group">
+                <label for="calc-purpose" class="calc-label">2. Finalidad del Avalúo:</label>
+                <select id="calc-purpose" class="calc-select">
+                  <option value="Credito Infonavit / Fovissste / Banco">Crédito Hipotecario (Infonavit, Fovissste o Banco)</option>
+                  <option value="Compra-Venta Particular">Compra-Venta entre particulares</option>
+                  <option value="Tramite Notarial / Escrituracion">Trámite Notarial / Escrituración</option>
+                  <option value="Herencia / Juicio Sucesorio">Juicio Sucesorio / Partición de Herencia</option>
+                  <option value="Fiscal / Catastral">Fiscal, Predial o Traslado de Dominio (ISAI)</option>
+                </select>
+              </div>
+
+              <!-- 3. Metros Cuadrados y Ubicación -->
+              <div class="calc-options-grid">
+                <div class="calc-form-group">
+                  <label for="calc-area" class="calc-label">3. Superficie estimada (m²):</label>
+                  <input type="number" id="calc-area" class="calc-input" placeholder="Ej. 120" min="10" step="5">
+                </div>
+                <div class="calc-form-group">
+                  <label for="calc-location" class="calc-label">4. Municipio o Alcaldía:</label>
+                  <input type="text" id="calc-location" class="calc-input" placeholder="Ej. Tecámac / EdoMex / CDMX">
+                </div>
+              </div>
+            </div>
+
+            <!-- Resumen y acción rápida por WhatsApp -->
+            <div class="calc-result-panel">
+              <div>
+                <div class="calc-result-header">
+                  <h4>Resumen de Cotización</h4>
+                  <p>Dictamen con peritaje certificado y validez ante instituciones oficiales.</p>
+                </div>
+
+                <div class="calc-summary-body">
+                  <div class="calc-summary-item">
+                    <span>Inmueble:</span>
+                    <span id="summary-property">Casa o Departamento</span>
+                  </div>
+                  <div class="calc-summary-item">
+                    <span>Propósito:</span>
+                    <span id="summary-purpose">Crédito Hipotecario</span>
+                  </div>
+                  <div class="calc-summary-item">
+                    <span>Superficie:</span>
+                    <span id="summary-area">Por definir</span>
+                  </div>
+                  <div class="calc-summary-item">
+                    <span>Ubicación:</span>
+                    <span id="summary-location">EdoMex / CDMX</span>
+                  </div>
+                  <div class="calc-summary-item">
+                    <span>Modalidad:</span>
+                    <span id="summary-type">Dictamen Oficial Certificado</span>
+                  </div>
+                </div>
+
+                <div class="calc-delivery-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <div>
+                    <h5>Tiempo estimado de entrega</h5>
+                    <p id="summary-time">48 a 72 hrs hábiles tras inspección</p>
+                  </div>
+                </div>
+              </div>
+
+              <a href="https://wa.me/525582261987?text=Hola%20AZ%20Valuaciones,%20me%20gustar%C3%ADa%20cotizar%20un%20aval%C3%BAo" id="btn-calc-whatsapp" class="calc-whatsapp-btn" target="_blank" rel="noopener">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Cotizar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EL PROCESO EN 4 PASOS ==================== -->
+    <section id="proceso" class="process-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Metodología Clara</span>
+          <h2 class="section-title">El Proceso de Valuación</h2>
+          <p class="section-desc">
+            Un flujo de trabajo transparente, ágil y con estricto rigor normativo para garantizar la certeza jurídica de su patrimonio.
+          </p>
+        </div>
+
+        <div class="process-steps-grid">
+          <!-- Paso 01 -->
+          <div class="process-step-card">
+            <div class="process-num">01</div>
+            <h4 class="process-title">Solicitud y Cotización</h4>
+            <p class="process-desc">
+              Envío de información preliminar de la propiedad y objetivo del avalúo para emitir su propuesta personalizada sin costo.
+            </p>
+          </div>
+
+          <!-- Paso 02 -->
+          <div class="process-step-card">
+            <div class="process-num">02</div>
+            <h4 class="process-title">Inspección Técnica</h4>
+            <p class="process-desc">
+              Visita física al inmueble por parte de un perito valuador certificado para levantamiento métrico, memoria fotográfica y estado de conservación.
+            </p>
+          </div>
+
+          <!-- Paso 03 -->
+          <div class="process-step-card">
+            <div class="process-num">03</div>
+            <h4 class="process-title">Estudio de Mercado</h4>
+            <p class="process-desc">
+              Investigación analítica de la zona, comparables reales y aplicación rigurosa de los enfoques de mercado, costo e ingresos.
+            </p>
+          </div>
+
+          <!-- Paso 04 -->
+          <div class="process-step-card">
+            <div class="process-num">04</div>
+            <h4 class="process-title">Dictamen Oficial</h4>
+            <p class="process-desc">
+              Entrega de carpeta técnica con firma pericial, cédula profesional y validez jurídica inmediata ante la institución solicitante.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DOCUMENTACIÓN REQUERIDA ==================== -->
+    <section id="documentacion" class="docs-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Requisitos y Trámites</span>
+          <h2 class="section-title">Documentación Requerida</h2>
+          <p class="section-desc">
+            Consulte la documentación básica para iniciar el dictamen técnico de acuerdo a su tipo de inmueble y trámite.
+          </p>
+        </div>
+
+        <div class="docs-wrapper">
+          <!-- Botones de pestañas -->
+          <div class="docs-tabs-nav" role="tablist">
+            <button class="docs-tab-btn active" role="tab" aria-selected="true" data-tab="tab-hipotecario">Crédito Hipotecario</button>
+            <button class="docs-tab-btn" role="tab" aria-selected="false" data-tab="tab-comercial">Comercial / Notarial</button>
+            <button class="docs-tab-btn" role="tab" aria-selected="false" data-tab="tab-terreno">Terrenos y Predios</button>
+          </div>
+
+          <!-- Panel 1: Hipotecario -->
+          <div id="tab-hipotecario" class="docs-tab-pane active" role="tabpanel">
+            <ul class="docs-list">
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Escritura Pública</h5>
+                  <p>Copia completa con sello de inscripción en el Registro Público de la Propiedad.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Boleta Predial Actualizada</h5>
+                  <p>Comprobante de pago o boleta predial del último bimestre o año en curso.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Boleta de Agua</h5>
+                  <p>Recibo reciente con estatus al corriente o constancia de no adeudo.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                </svg>
+                <div>
+                  <h5>Identificación Oficial</h5>
+                  <p>INE o pasaporte vigente del propietario o representante legal.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Panel 2: Comercial -->
+          <div id="tab-comercial" class="docs-tab-pane" role="tabpanel">
+            <ul class="docs-list">
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Título de Propiedad o Escritura</h5>
+                  <p>Documento constitutivo y facultades notariales del representante legal.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <div>
+                  <h5>Planos Arquitectónicos</h5>
+                  <p>Planos de distribución arquitectónica, cortes y fachadas (si se cuenta con ellos).</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Licencia de Uso de Suelo</h5>
+                  <p>Permisos vigentes o cédula de zonificación según aplique.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Comprobantes Fiscales y Predial</h5>
+                  <p>Último recibo predial pagado y constancia de situación fiscal.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Panel 3: Terrenos -->
+          <div id="tab-terreno" class="docs-tab-pane" role="tabpanel">
+            <ul class="docs-list">
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <div>
+                  <h5>Título de Propiedad o Certificado</h5>
+                  <p>Escritura pública, título parcelario o certificado de derechos (según régimen).</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                </svg>
+                <div>
+                  <h5>Plano Topográfico y Medidas</h5>
+                  <p>Plano o croquis con rumbos, distancias y colindancias delimitadas.</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <div>
+                  <h5>Alineamiento y Número Oficial</h5>
+                  <p>Constancia de alineamiento o cédula catastral municipal (opcional).</p>
+                </div>
+              </li>
+              <li class="docs-list-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="7" r="4"></circle>
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                </svg>
+                <div>
+                  <h5>Identificación del Titular</h5>
+                  <p>Copia de identificación oficial vigente del solicitante o apoderado.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SHOWCASE DE IDENTIDAD & DIFERENCIADORES ==================== -->
+    <section class="showcase-section">
+      <div class="container">
+        <div class="showcase-grid">
+          <!-- Columna Imagen Arquitectura y Avalúos -->
+          <div class="showcase-image-box">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" 
+                 onerror="this.src='https://placehold.co/800x880/1A1D20/B08D57?text=AZ+Valuaciones+%7C+Arquitectura'" 
+                 alt="Arquitectura residencial contemporánea valuada profesionalmente por AZ Valuaciones">
+            <div class="showcase-image-overlay">
+              <span>Normatividad NMX-C-459 &amp; SHF</span>
+              <p>Certeza técnica y jurídica para inversiones y patrimonio inmobiliario</p>
+            </div>
+          </div>
+
+          <!-- Columna Diferenciadores y Confianza -->
+          <div class="showcase-features">
+            <div>
+              <span class="section-tag">Por Qué Elegirnos</span>
+              <h2 class="section-title">Confidencialidad, Rigor y Respaldo Oficial</h2>
+              <p class="section-desc" style="margin: 0 0 12px 0;">
+                En AZ Valuaciones conjugamos la experiencia pericial inmobiliaria con herramientas analíticas modernas para brindar avalúos con certeza total.
+              </p>
+            </div>
+
+            <div class="showcase-feature-item">
+              <div class="showcase-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                </svg>
+              </div>
+              <div class="showcase-feature-info">
+                <h4>Peritos con Cédula Profesional</h4>
+                <p>Nuestros dictámenes son elaborados y firmados por peritos valuadores con posgrado acreditado y registro activo ante la Sociedad Hipotecaria Federal (SHF).</p>
+              </div>
+            </div>
+
+            <div class="showcase-feature-item">
+              <div class="showcase-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="showcase-feature-info">
+                <h4>Tiempos de Entrega Eficientes</h4>
+                <p>Optimizamos los tiempos de gabinete y levantamiento para entregar su expediente en un plazo de 48 a 72 horas hábiles tras la visita.</p>
+              </div>
+            </div>
+
+            <div class="showcase-feature-item">
+              <div class="showcase-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="showcase-feature-info">
+                <h4>Aceptación Garantizada</h4>
+                <p>Cumplimiento estricto con las Normas Mexicanas de Valuación (NMX-C-459-ONNCCE) e IVS, garantizando plena validez jurídica y bancaria.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN DE CONTACTO & UBICACIÓN ==================== -->
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Contacto Directo</span>
+          <h2 class="section-title">Comience su Solicitud</h2>
+          <p class="section-desc">
+            Estamos a su disposición para asesorarle en su requerimiento de avalúo en Estado de México, Ciudad de México y zonas conurbadas.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Datos de Contacto -->
+          <div class="contact-info-card">
+            <div>
+              <h3>Atención Inmediata</h3>
+              <p>Comuníquese con nosotros para agendar su visita de inspección o resolver cualquier duda sobre su trámite.</p>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <h5>Ubicación</h5>
+                    <p>Los Héroes Tecámac, Estado de México</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <h5>Teléfono / WhatsApp</h5>
+                    <p><a href="https://wa.me/525582261987" target="_blank" rel="noopener">+52 55 8226 1987</a></p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <h5>Correo Electrónico</h5>
+                    <p><a href="mailto:contacto@azvaluaciones.com">contacto@azvaluaciones.com</a></p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-item-content">
+                    <h5>Horario de Atención</h5>
+                    <p>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 9:00 - 14:00 hrs</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario de Contacto Funcional -->
+          <div class="contact-form-card">
+            <form id="main-contact-form">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Nombre Completo *</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="Su nombre" required>
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label">Teléfono / WhatsApp *</label>
+                  <input type="tel" id="contact-phone" class="form-control" placeholder="10 dígitos" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service" class="form-label">Especialidad de Interés *</label>
+                <select id="contact-service" class="form-control" required>
+                  <option value="Avalúo Inmobiliario / Habitacional">Avalúos Inmobiliarios (Infonavit / Fovissste / Hipotecario)</option>
+                  <option value="Avalúo Comercial / Industrial">Avalúos Comerciales (Locales, Oficinas, Bodegas)</option>
+                  <option value="Avalúo de Terrenos / Predios">Avalúos de Terrenos (Urbanos, Rústicos)</option>
+                  <option value="Avalúo Notarial / Fiscal / Catastral">Avalúo Notarial / Fiscal / Traslado de Dominio</option>
+                  <option value="Otro tipo de valuación">Otro requerimiento especial</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Detalles del Inmueble y Ubicación</label>
+                <textarea id="contact-message" class="form-control" placeholder="Indique brevemente municipio, metros aproximados y para qué trámite necesita su avalúo..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                Enviar Solicitud por WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Logo en footer -->
+        <a href="#inicio" class="brand-logo" aria-label="Ir arriba">
+          <svg class="brand-svg-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="60" height="60" rx="14" fill="#25292E" stroke="#B08D57" stroke-width="2"/>
+            <path d="M14 29L32 14L50 29" stroke="#B08D57" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 26V49H45V26" stroke="#B08D57" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.75"/>
+            <text x="32" y="42" text-anchor="middle" font-family="Cinzel, Georgia, serif" font-weight="700" font-size="16" letter-spacing="1" fill="#E7D2AD">AZ</text>
+          </svg>
+          <div class="brand-text-wrap">
+            <span class="brand-title">AZ VALUACIONES</span>
+            <span class="brand-subtitle">Peritos Certificados</span>
+          </div>
+        </a>
+
+        <!-- Datos directos de contacto -->
+        <div class="footer-info-strip">
+          <span>
+            📍 Los Héroes Tecámac, Estado de México
+          </span>
+          <a href="https://wa.me/525582261987" target="_blank" rel="noopener">
+            📞 Cel: +52 55 8226 1987
+          </a>
+          <a href="mailto:contacto@azvaluaciones.com">
+            ✉️ Email: contacto@azvaluaciones.com
+          </a>
+        </div>
+
+        <!-- Redes sociales minimalistas -->
+        <div class="footer-socials">
+          <a href="https://wa.me/525582261987" class="social-btn" aria-label="WhatsApp de AZ Valuaciones" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+          </a>
+          <a href="#contacto" class="social-btn" aria-label="Facebook de AZ Valuaciones">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="#contacto" class="social-btn" aria-label="Instagram de AZ Valuaciones">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 AZ Valuaciones. Todos los derechos reservados. Expertos en Valuación Inmobiliaria.</p>
+        <p>Dictámenes Periciales con Cédula Profesional y Respaldo Oficial.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== BOTÓN FLOTANTE WHATSAPP ==================== -->
+  <a href="https://wa.me/525582261987?text=Hola%20AZ%20Valuaciones,%20me%20gustar%C3%ADa%20cotizar%20un%20aval%C3%BAo" 
+     class="whatsapp-float" 
+     target="_blank" 
+     rel="noopener"
+     aria-label="Contactar por WhatsApp para cotizar avalúo">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span>Cotizar Avalúo</span>
+  </a>
+
+  <!-- ==================== MODAL SOLICITAR AVALÚO ==================== -->
+  <div id="modal-solicitar" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar ventana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="section-tag" style="margin-bottom: 6px;">Solicitud Rápida</span>
+        <h3 id="modal-title">Solicitar Avalúo Profesional</h3>
+        <p>Complete sus datos para recibir atención personalizada por parte de un perito valuador.</p>
+      </div>
+
+      <form id="modal-solicitar-form">
+        <div class="form-group">
+          <label for="modal-nombre" class="form-label">Nombre Completo *</label>
+          <input type="text" id="modal-nombre" class="form-control" placeholder="Ej. Lic. Roberto Mendoza" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-telefono" class="form-label">Teléfono de Contacto / WhatsApp *</label>
+          <input type="tel" id="modal-telefono" class="form-control" placeholder="Ej. 55 1234 5678" required>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-servicio" class="form-label">Tipo de Avalúo Requerido *</label>
+          <select id="modal-servicio" class="form-control" required>
+            <option value="Avalúo Inmobiliario">Avalúo Inmobiliario (Crédito Hipotecario / Vivienda)</option>
+            <option value="Avalúo Comercial">Avalúo Comercial (Local / Oficina / Plaza / Nave)</option>
+            <option value="Avalúo de Terrenos">Avalúo de Terrenos (Urbano / Rústico)</option>
+            <option value="Avalúo Notarial / Fiscal">Avalúo Notarial / Fiscal (Traslado de Dominio / ISAI)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="modal-ubicacion" class="form-label">Ubicación del Inmueble</label>
+          <input type="text" id="modal-ubicacion" class="form-control" placeholder="Municipio, Alcaldía o Colonia">
+        </div>
+
+        <div class="form-group">
+          <label for="modal-mensaje" class="form-label">Comentarios Adicionales (Opcional)</label>
+          <textarea id="modal-mensaje" class="form-control" style="min-height: 80px;" placeholder="¿Cuenta con escrituras y predial? ¿Para qué fecha necesita el dictamen?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          Enviar y Contactar por WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS INTERACTIVOS ==================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const WHATSAPP_PHONE = '525582261987';
+
+      /* --------------------------------------------------------------------
+         1. HEADER STICKY & RESALTADO DE NAVEGACIÓN ACTIVA
+         -------------------------------------------------------------------- */
+      const header = document.getElementById('site-header');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 24) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+
+        let currentSection = '';
+        sections.forEach(sec => {
+          const sectionTop = sec.offsetTop - 130;
+          if (window.scrollY >= sectionTop) {
+            currentSection = sec.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      /* --------------------------------------------------------------------
+         2. MENÚ MÓVIL DESPLEGABLE
+         -------------------------------------------------------------------- */
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-nav-drawer');
+      const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+      if (mobileToggle && mobileDrawer) {
+        mobileToggle.addEventListener('click', () => {
+          const isOpen = mobileDrawer.classList.toggle('open');
+          mobileToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileDrawer.classList.remove('open');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      /* --------------------------------------------------------------------
+         3. COTIZADOR INTERACTIVO EN TIEMPO REAL + WHATSAPP DINÁMICO
+         -------------------------------------------------------------------- */
+      const propertyRadios = document.querySelectorAll('input[name="calc-property"]');
+      const purposeSelect = document.getElementById('calc-purpose');
+      const areaInput = document.getElementById('calc-area');
+      const locationInput = document.getElementById('calc-location');
+
+      const summaryProperty = document.getElementById('summary-property');
+      const summaryPurpose = document.getElementById('summary-purpose');
+      const summaryArea = document.getElementById('summary-area');
+      const summaryLocation = document.getElementById('summary-location');
+      const summaryTime = document.getElementById('summary-time');
+      const btnCalcWhatsapp = document.getElementById('btn-calc-whatsapp');
+
+      function updateQuoteSummary() {
+        const selectedRadio = document.querySelector('input[name="calc-property"]:checked');
+        const propertyVal = selectedRadio ? selectedRadio.value : 'Casa o Departamento';
+        const purposeVal = purposeSelect ? purposeSelect.value : 'Crédito Hipotecario';
+        const areaVal = areaInput && areaInput.value.trim() !== '' ? `${areaInput.value.trim()} m²` : 'Por definir';
+        const locationVal = locationInput && locationInput.value.trim() !== '' ? locationInput.value.trim() : 'EdoMex / CDMX';
+
+        if (summaryProperty) summaryProperty.textContent = propertyVal;
+        if (summaryPurpose) summaryPurpose.textContent = purposeVal;
+        if (summaryArea) summaryArea.textContent = areaVal;
+        if (summaryLocation) summaryLocation.textContent = locationVal;
+
+        // Ajuste de tiempo estimado según complejidad del inmueble
+        if (summaryTime) {
+          if (propertyVal === 'Nave o Bodega' || propertyVal === 'Local u Oficina') {
+            summaryTime.textContent = '72 a 96 hrs hábiles tras inspección';
+          } else {
+            summaryTime.textContent = '48 a 72 hrs hábiles tras inspección';
+          }
+        }
+
+        // Construir mensaje personalizado para WhatsApp
+        const message = [
+          'Hola *AZ Valuaciones*, solicito una cotización preliminar de avalúo con los siguientes datos:',
+          `• *Propiedad:* ${propertyVal}`,
+          `• *Finalidad:* ${purposeVal}`,
+          `• *Superficie estimada:* ${areaVal}`,
+          `• *Ubicación:* ${locationVal}`,
+          'Quedo atento a su asesoría. Gracias.'
+        ].join('\n');
+
+        if (btnCalcWhatsapp) {
+          btnCalcWhatsapp.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+        }
+      }
+
+      propertyRadios.forEach(radio => radio.addEventListener('change', updateQuoteSummary));
+      if (purposeSelect) purposeSelect.addEventListener('change', updateQuoteSummary);
+      if (areaInput) areaInput.addEventListener('input', updateQuoteSummary);
+      if (locationInput) locationInput.addEventListener('input', updateQuoteSummary);
+
+      // Inicializar resumen al cargar
+      updateQuoteSummary();
+
+      /* --------------------------------------------------------------------
+         4. PESTAÑAS DE DOCUMENTACIÓN REQUERIDA
+         -------------------------------------------------------------------- */
+      const tabButtons = document.querySelectorAll('.docs-tab-btn');
+      const tabPanes = document.querySelectorAll('.docs-tab-pane');
+
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-tab');
+
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          tabPanes.forEach(pane => pane.classList.remove('active'));
+
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          const targetPane = document.getElementById(targetId);
+          if (targetPane) targetPane.classList.add('active');
+        });
+      });
+
+      /* --------------------------------------------------------------------
+         5. MODAL SOLICITAR AVALÚO (APERTURA, PRESELECCIÓN Y CIERRE)
+         -------------------------------------------------------------------- */
+      const modalOverlay = document.getElementById('modal-solicitar');
+      const openModalButtons = document.querySelectorAll('.open-modal-btn');
+      const closeModalBtn = document.getElementById('modal-close-btn');
+      const modalServiceSelect = document.getElementById('modal-servicio');
+
+      function openModal(serviceName) {
+        if (!modalOverlay) return;
+        if (serviceName && modalServiceSelect) {
+          for (let i = 0; i < modalServiceSelect.options.length; i++) {
+            if (modalServiceSelect.options[i].value === serviceName) {
+              modalServiceSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+        if (mobileDrawer) mobileDrawer.classList.remove('open');
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        if (!modalOverlay) return;
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      openModalButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const serviceAttr = btn.getAttribute('data-service');
+          openModal(serviceAttr);
+        });
+      });
+
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeModal);
+      }
+
+      if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+          if (e.target === modalOverlay) closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      /* --------------------------------------------------------------------
+         6. ENVÍO DE FORMULARIOS (MODAL Y CONTACTO PRINCIPAL) HACIA WHATSAPP
+         -------------------------------------------------------------------- */
+      const modalForm = document.getElementById('modal-solicitar-form');
+      if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nombre = document.getElementById('modal-nombre').value.trim();
+          const telefono = document.getElementById('modal-telefono').value.trim();
+          const servicio = document.getElementById('modal-servicio').value;
+          const ubicacion = document.getElementById('modal-ubicacion').value.trim() || 'No especificada';
+          const mensaje = document.getElementById('modal-mensaje').value.trim() || 'Sin comentarios adicionales';
+
+          const waText = [
+            'Hola *AZ Valuaciones*, envío solicitud de avalúo:',
+            `• *Nombre:* ${nombre}`,
+            `• *Teléfono:* ${telefono}`,
+            `• *Servicio:* ${servicio}`,
+            `• *Ubicación:* ${ubicacion}`,
+            `• *Comentarios:* ${mensaje}`
+          ].join('\n');
+
+          window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`, '_blank', 'noopener');
+          closeModal();
+          modalForm.reset();
+        });
+      }
+
+      const mainContactForm = document.getElementById('main-contact-form');
+      if (mainContactForm) {
+        mainContactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nombre = document.getElementById('contact-name').value.trim();
+          const telefono = document.getElementById('contact-phone').value.trim();
+          const servicio = document.getElementById('contact-service').value;
+          const detalles = document.getElementById('contact-message').value.trim() || 'Solicito información y cotización.';
+
+          const waText = [
+            'Hola *AZ Valuaciones*, me contacto desde su sitio web:',
+            `• *Nombre:* ${nombre}`,
+            `• *Teléfono:* ${telefono}`,
+            `• *Especialidad:* ${servicio}`,
+            `• *Detalles del inmueble:* ${detalles}`
+          ].join('\n');
+
+          window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(waText)}`, '_blank', 'noopener');
+          mainContactForm.reset();
+        });
+      }
+    });
+  </script>
 </body>
 </html>
