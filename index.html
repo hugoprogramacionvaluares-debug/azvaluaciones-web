@@ -1,1056 +1,1746 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AZ Valuaciones | Peritos en Valuación Inmobiliaria y Comercial · Edo. Méx., CDMX e Hidalgo</title>
-  <meta name="description" content="AZ Valuaciones. Peritos valuadores inmobiliarios, comerciales y de terrenos certificados ante Infonavit (Línea II y V), Fovissste, Issfam, Banjército y SHF. Validez oficial y precisión en Estado de México, CDMX e Hidalgo.">
-  <meta name="theme-color" content="#F7F5F0">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZ VALUACIONES | Valuación Inmobiliaria · Estado de México, CDMX e Hidalgo</title>
+  <link rel="icon" type="image/png" href="assets/logo-icono.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --vino: #3b0d17;
+      --vino-medio: #4c111f;
+      --vino-oscuro: #24060d;
+      --vino-profundo: #1b0409;
+      --crema: #f7f1e8;
+      --crema-suave: #efe5d7;
+      --tarjeta-clara: #fffdf9;
+      --dorado: #e5c7a3;
+      --dorado-fuerte: #c9a165;
+      --texto-oscuro: #1d1416;
+      --texto-suave: #5a4c4f;
+      --borde-claro: rgba(59, 13, 23, 0.14);
+      --borde-oscuro: rgba(229, 199, 163, 0.22);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-  <!-- Google Fonts: Outfit (geométrico/lujo) & Plus Jakarta Sans (legibilidad moderna) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- Estilos principales -->
-  <link rel="stylesheet" href="assets/css/style.css">
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--crema);
+      color: var(--texto-oscuro);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Barra superior y navegación */
+    header.topbar {
+      background: rgba(36, 6, 13, 0.94);
+      backdrop-filter: blur(12px);
+      color: var(--crema);
+      border-bottom: 1px solid var(--borde-oscuro);
+      position: sticky;
+      top: 0;
+      z-index: 60;
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 13px 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      background: var(--crema);
+      padding: 5px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(229, 199, 163, 0.55);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+      transition: transform 0.18s ease;
+    }
+
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+
+    .brand img {
+      display: block;
+      height: 32px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    nav a {
+      color: rgba(247, 241, 232, 0.86);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--dorado);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, filter 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn-dorado {
+      background-color: var(--dorado);
+      color: var(--vino-oscuro);
+    }
+
+    .btn-dorado:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .btn-borde-claro {
+      border-color: rgba(229, 199, 163, 0.38);
+      color: var(--crema);
+      background: rgba(27, 4, 9, 0.35);
+    }
+
+    .btn-borde-claro:hover {
+      border-color: var(--dorado);
+      color: var(--dorado);
+      background: rgba(229, 199, 163, 0.08);
+    }
+
+    .btn-vino {
+      background-color: var(--vino);
+      color: var(--crema);
+      border-radius: 8px;
+    }
+
+    .btn-vino:hover {
+      background-color: var(--vino-oscuro);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background-color: var(--vino-oscuro);
+      background-image:
+        linear-gradient(102deg, rgba(42, 7, 15, 0.94) 0%, rgba(56, 11, 22, 0.85) 54%, rgba(27, 4, 9, 0.72) 100%),
+        url("assets/hero-bg.jpg");
+      background-size: cover;
+      background-position: center;
+      color: var(--crema);
+      padding: 48px 0 64px;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Contenedor de video que reemplaza al logotipo principal */
+    .hero-video-logo {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 199, 163, 0.32);
+      background: rgba(20, 4, 8, 0.65);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+      margin-bottom: 22px;
+    }
+
+    .hero-video-logo video {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--vino-oscuro);
+      background: var(--crema);
+      padding: 8px 18px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 4.8vw, 3.85rem);
+      line-height: 1.03;
+      margin-bottom: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--dorado);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(247, 241, 232, 0.9);
+      margin-bottom: 10px;
+      max-width: 580px;
+    }
+
+    .hero-sub strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .shf-respaldo {
+      font-size: 0.86rem;
+      color: var(--dorado);
+      margin-bottom: 26px;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Panel derecho del Hero */
+    .panel-resumen {
+      background: rgba(31, 6, 12, 0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--borde-oscuro);
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.36);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .panel-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--dorado-fuerte);
+      margin-bottom: 4px;
+    }
+
+    .panel-resumen h2 {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--crema);
+      line-height: 1.15;
+    }
+
+    .panel-badge {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(229, 199, 163, 0.28);
+      background: rgba(229, 199, 163, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dorado);
+    }
+
+    .metricas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metrica-box {
+      background: rgba(65, 16, 28, 0.45);
+      border: 1px solid rgba(229, 199, 163, 0.18);
+      border-radius: 12px;
+      padding: 15px 14px;
+    }
+
+    .metrica-box strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--crema);
+      margin-bottom: 4px;
+      line-height: 1.15;
+    }
+
+    .metrica-box span {
+      display: block;
+      font-size: 0.76rem;
+      color: rgba(247, 241, 232, 0.78);
+      line-height: 1.35;
+    }
+
+    .correo-barra {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: rgba(20, 4, 8, 0.55);
+      border: 1px solid rgba(229, 199, 163, 0.2);
+      padding: 11px 15px;
+      border-radius: 12px;
+      font-size: 0.84rem;
+    }
+
+    .correo-barra a {
+      color: var(--crema);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .correo-barra a:hover {
+      color: var(--dorado);
+    }
+
+    .btn-copiar-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(229, 199, 163, 0.12);
+      color: var(--dorado);
+      border: 1px solid rgba(229, 199, 163, 0.28);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s ease;
+    }
+
+    .btn-copiar-mini:hover {
+      background: rgba(229, 199, 163, 0.22);
+    }
+
+    /* Cintillo marquee */
+    .marquee {
+      background-color: var(--vino-profundo);
+      color: var(--dorado);
+      border-top: 1px solid var(--borde-oscuro);
+      border-bottom: 1px solid var(--borde-oscuro);
+      padding: 12px 0;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 28px;
+      animation: marqueeScroll 32s linear infinite;
+    }
+
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Secciones generales */
+    section.seccion {
+      padding: 76px 0;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--vino);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .titulo-seccion {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+      font-weight: 600;
+      line-height: 1.12;
+      margin-bottom: 12px;
+      color: var(--vino-oscuro);
+    }
+
+    .subtitulo-seccion {
+      color: var(--texto-suave);
+      max-width: 720px;
+      margin-bottom: 34px;
+      font-size: 0.96rem;
+    }
+
+    /* Servicios */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--tarjeta-clara);
+      border: 1px solid var(--borde-claro);
+      border-radius: 14px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 8px 24px rgba(36, 6, 13, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(36, 6, 13, 0.08);
+      border-color: rgba(59, 13, 23, 0.28);
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--vino);
+      background: rgba(216, 178, 110, 0.22);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--vino-oscuro);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--texto-suave);
+      margin-bottom: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--texto-oscuro);
+      border-top: 1px solid var(--borde-claro);
+      padding-top: 12px;
+    }
+
+    .card ul li {
+      position: relative;
+      padding-left: 16px;
+      margin-bottom: 5px;
+    }
+
+    .card ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--dorado-fuerte);
+      font-weight: 700;
+    }
+
+    /* Sección oscura: Guía Rápida de Documentación */
+    section.seccion-requisitos {
+      background: linear-gradient(180deg, #350914 0%, #24050c 100%);
+      color: var(--crema);
+      padding: 80px 0;
+      border-top: 1px solid var(--borde-oscuro);
+      border-bottom: 1px solid var(--borde-oscuro);
+    }
+
+    .req-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 30px;
+    }
+
+    .req-header .eyebrow {
+      color: var(--dorado);
+    }
+
+    .req-header .titulo-seccion {
+      color: var(--crema);
+    }
+
+    .req-header .subtitulo-seccion {
+      color: rgba(247, 241, 232, 0.8);
+      margin: 0 auto;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tab-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(229, 199, 163, 0.24);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(247, 241, 232, 0.88);
+      font-family: var(--sans);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--dorado);
+      color: var(--dorado);
+    }
+
+    .tab-btn.activa {
+      background: var(--dorado);
+      color: var(--vino-oscuro);
+      border-color: var(--dorado);
+    }
+
+    .doc-box {
+      background: rgba(45, 9, 18, 0.65);
+      border: 1px solid rgba(229, 199, 163, 0.22);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    .doc-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr 1.1fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .doc-intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding-right: 6px;
+    }
+
+    .doc-pill {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      background: rgba(229, 199, 163, 0.12);
+      border: 1px solid rgba(229, 199, 163, 0.22);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .doc-intro h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--crema);
+      margin-bottom: 12px;
+    }
+
+    .doc-intro p.doc-desc {
+      font-size: 0.9rem;
+      color: rgba(247, 241, 232, 0.82);
+      margin-bottom: 16px;
+    }
+
+    .enfoque-box {
+      background: rgba(24, 4, 9, 0.48);
+      border: 1px solid rgba(229, 199, 163, 0.18);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+
+    .enfoque-box span.enfoque-label {
+      display: block;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--dorado);
+      margin-bottom: 4px;
+    }
+
+    .enfoque-box p {
+      font-size: 0.84rem;
+      color: rgba(247, 241, 232, 0.86);
+      line-height: 1.45;
+    }
+
+    .doc-col-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .req-card {
+      background: rgba(28, 5, 11, 0.62);
+      border: 1px solid rgba(229, 199, 163, 0.2);
+      border-radius: 14px;
+      padding: 16px 18px;
+      flex: 1;
+    }
+
+    .req-card-title {
+      background: rgba(229, 199, 163, 0.13);
+      color: var(--dorado);
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .req-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .req-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: rgba(247, 241, 232, 0.92);
+      line-height: 1.38;
+    }
+
+    .req-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: var(--dorado-fuerte);
+    }
+
+    .envio-intro {
+      font-size: 0.82rem;
+      color: rgba(247, 241, 232, 0.88);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .envio-pill {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: #a58b52;
+      color: #fffdf9;
+      padding: 9px 13px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: filter 0.2s ease;
+    }
+
+    .envio-pill:hover {
+      filter: brightness(1.08);
+    }
+
+    .envio-meta {
+      font-size: 0.8rem;
+      color: rgba(247, 241, 232, 0.86);
+      margin-bottom: 8px;
+    }
+
+    .envio-meta strong {
+      color: var(--dorado);
+    }
+
+    .envio-notas {
+      list-style: disc;
+      padding-left: 16px;
+      font-size: 0.78rem;
+      color: rgba(247, 241, 232, 0.82);
+      line-height: 1.45;
+    }
+
+    .envio-notas li {
+      margin-bottom: 4px;
+    }
+
+    /* Proceso en 4 pasos */
+    .pasos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .paso-card {
+      background: var(--tarjeta-clara);
+      border: 1px solid var(--borde-claro);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 8px 20px rgba(36, 6, 13, 0.04);
+    }
+
+    .paso-num {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--vino);
+      background: rgba(216, 178, 110, 0.28);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .paso-card h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--vino-oscuro);
+    }
+
+    .paso-card p {
+      font-size: 0.88rem;
+      color: var(--texto-suave);
+    }
+
+    /* ¿Quiénes somos? (estilo editorial según captura) */
+    .nosotros-section {
+      background: var(--tarjeta-clara);
+      border-top: 1px solid var(--borde-claro);
+      border-bottom: 1px solid var(--borde-claro);
+    }
+
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .nosotros-media {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 44px rgba(36, 6, 13, 0.14);
+      border: 1px solid var(--borde-claro);
+    }
+
+    .nosotros-media img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+
+    .nosotros-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      background: rgba(255, 253, 249, 0.94);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.72rem;
+    }
+
+    .nosotros-caption strong {
+      letter-spacing: 0.12em;
+      color: var(--vino-oscuro);
+    }
+
+    .nosotros-caption span {
+      color: var(--texto-suave);
+      font-weight: 500;
+    }
+
+    .titulo-con-linea {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .titulo-con-linea .titulo-seccion {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .titulo-linea {
+      height: 1px;
+      flex: 1;
+      background: rgba(59, 13, 23, 0.22);
+    }
+
+    .nosotros-texto p {
+      color: var(--texto-suave);
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
+    .nosotros-texto strong {
+      color: var(--vino-oscuro);
+    }
+
+    .pilares {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--borde-claro);
+    }
+
+    .pilar strong {
+      display: block;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      color: var(--vino-oscuro);
+      margin-bottom: 4px;
+    }
+
+    .pilar span {
+      font-size: 0.82rem;
+      color: var(--texto-suave);
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* Cobertura y Contacto */
+    .dos-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      align-items: start;
+    }
+
+    .zonas-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 24px;
+    }
+
+    .zona-chip {
+      background: var(--tarjeta-clara);
+      border: 1px solid var(--borde-claro);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      color: var(--vino-oscuro);
+      font-weight: 500;
+    }
+
+    .contacto-section {
+      background: var(--crema-suave);
+      border-top: 1px solid var(--borde-claro);
+    }
+
+    .contacto-info-card {
+      background: var(--vino);
+      color: var(--crema);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 18px 36px rgba(36, 6, 13, 0.14);
+    }
+
+    .contacto-info-card .eyebrow {
+      color: var(--dorado);
+    }
+
+    .contacto-info-card .titulo-seccion {
+      color: var(--crema);
+    }
+
+    .contacto-info-card p {
+      color: rgba(247, 241, 232, 0.86);
+      font-size: 0.94rem;
+      margin-bottom: 20px;
+    }
+
+    .contacto-dato {
+      background: rgba(20, 4, 8, 0.38);
+      border: 1px solid var(--borde-oscuro);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+
+    .contacto-dato span {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .contacto-dato a,
+    .contacto-dato strong {
+      color: var(--crema);
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    /* Formulario de cotización */
+    form.cotizacion-form {
+      background: var(--tarjeta-clara);
+      border: 1px solid var(--borde-claro);
+      border-radius: 16px;
+      padding: 28px;
+      display: grid;
+      gap: 15px;
+      box-shadow: 0 14px 30px rgba(36, 6, 13, 0.06);
+    }
+
+    .campo label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--vino-oscuro);
+      margin-bottom: 6px;
+    }
+
+    .campo input,
+    .campo select {
+      width: 100%;
+      padding: 11px 13px;
+      border-radius: 8px;
+      border: 1px solid rgba(59, 13, 23, 0.22);
+      background: #fff;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--texto-oscuro);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .campo input:focus,
+    .campo select:focus {
+      outline: none;
+      border-color: var(--vino);
+      box-shadow: 0 0 0 3px rgba(59, 13, 23, 0.1);
+    }
+
+    .mensaje-envio {
+      font-size: 0.86rem;
+      color: var(--vino);
+      font-weight: 600;
+      min-height: 20px;
+    }
+
+    footer {
+      background: var(--vino-oscuro);
+      color: rgba(247, 241, 232, 0.86);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      border-top: 1px solid var(--borde-oscuro);
+    }
+
+    @media (max-width: 1040px) {
+      .doc-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .nosotros-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nosotros-media img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .pilares {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-video-logo {
+        max-width: 290px;
+      }
+    }
+
+    .footer-brand {
+      display: inline-block;
+      background: var(--crema);
+      padding: 8px 18px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(229, 199, 163, 0.4);
+    }
+
+    .footer-brand img {
+      display: block;
+      height: 44px;
+      width: auto;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- ==================== HEADER / BARRA DE NAVEGACIÓN ==================== -->
-  <header class="site-header">
-    <div class="container">
-      <nav class="nav-wrapper">
-        <!-- Logotipo oficial -->
-        <a href="#inicio" class="brand-logo" aria-label="Ir al inicio de AZ Valuaciones">
-          <img src="assets/images/logo-nav-transparent.png" alt="AZ Valuaciones" width="112" height="60">
-        </a>
-
-        <!-- Enlaces principales de navegación -->
-        <ul class="nav-links">
-          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-          <li><a href="#servicios" class="nav-link">Especialidades</a></li>
-          <li><a href="#proceso" class="nav-link">Proceso</a></li>
-          <li><a href="#documentacion" class="nav-link">Documentación</a></li>
-          <li><a href="#cotizador" class="nav-link">Cotizador</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
-        </ul>
-
-        <!-- Botón de acción destacado -->
-        <div class="nav-actions">
-          <a href="#cotizador" class="btn btn-primary open-modal-btn">Solicitar Avalúo</a>
-          <button class="mobile-toggle" aria-label="Abrir menú de navegación">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
-        </div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#inicio" class="brand" aria-label="AZ Valuaciones - Inicio">
+        <img src="assets/logo-az-vector.png" alt="AZ Valuaciones" />
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">INICIO</a>
+        <a href="#servicios">SERVICIOS</a>
+        <a href="#requisitos">REQUISITOS</a>
+        <a href="#proceso">PROCESO</a>
+        <a href="#nosotros">NOSOTROS</a>
+        <a href="#cobertura">COBERTURA</a>
       </nav>
+      <a href="#contacto" class="btn btn-dorado">COTIZAR AHORA</a>
     </div>
   </header>
 
-  <!-- Menú desplegable para móviles -->
-  <div class="mobile-nav-drawer">
-    <a href="#inicio">Inicio</a>
-    <a href="#servicios">Especialidades</a>
-    <a href="#proceso">Proceso</a>
-    <a href="#documentacion">Documentación</a>
-    <a href="#cotizador">Cotizador</a>
-    <a href="#contacto">Contacto</a>
-    <a href="#modal-solicitar" class="btn btn-primary open-modal-btn" style="margin-top: 16px; text-align: center;">Solicitar Avalúo</a>
-  </div>
+  <section id="inicio" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-video-logo">
+          <video autoplay loop muted playsinline preload="auto" aria-label="Video corporativo AZ Valuaciones">
+            <source src="assets/hero-valuaciones.mp4" type="video/mp4" />
+            AZ VALUACIONES
+          </video>
+        </div>
 
-  <main>
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="inicio" class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <!-- Columna Izquierda: Mensaje de Valor y CTA -->
-          <div class="hero-content">
-            <span class="hero-tagline">✦ Expertos en Valuación Inmobiliaria · Edo. Méx., CDMX e Hidalgo</span>
-            <h1 class="hero-title">
-              Avalúos Inmobiliarios <span>Precisos y Certificados.</span>
-            </h1>
-            <p class="hero-lead">
-              Especialistas en avalúos para vivienda de interés social, créditos hipotecarios (Infonavit Línea II y V, Fovissste, Issfam, Banjército) y operaciones comerciales, con el respaldo oficial de nuestros peritos valuadores certificados.
-            </p>
-
-            <div class="hero-ctas">
-              <a href="#contacto" class="btn btn-primary open-modal-btn">Solicitar Avalúo</a>
-              <a href="#cotizador" class="btn btn-secondary">Calcular Cotización</a>
-            </div>
-
-            <!-- Respaldo y métricas en formato minimalista -->
-            <div class="hero-badges">
-              <div class="hero-badge-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-                <span>Cédula y Registro Oficial</span>
-              </div>
-              <div class="hero-badge-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <span>Entrega en 48 a 72 hrs</span>
-              </div>
-              <div class="hero-badge-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <span>Estricta Confidencialidad</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Columna Derecha: Video Principal en lugar del logotipo -->
-          <div class="hero-visual">
-            <div class="hero-image-frame">
-              <video class="hero-image-main" autoplay muted loop playsinline poster="assets/images/logo-oficial.jpg" aria-label="Video de presentación de AZ Valuaciones">
-                <source src="assets/images/hero-valuaciones.mp4" type="video/mp4">
-              </video>
-              <!-- Tarjeta flotante con detalles de certificación -->
-              <div class="hero-floating-card">
-                <img src="assets/images/favicon.png" alt="Sello de certificación AZ Valuaciones">
-                <div class="hero-floating-card-info">
-                  <h4>Dictámenes Oficiales</h4>
-                  <p>Infonavit L-II y L-V • Fovissste • Issfam • Banjército • SHF</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="pill">PRECISIÓN · VALOR · CONFIANZA</div>
+        <h1>
+          Respaldo técnico<br />
+          <em>para tu patrimonio.</em>
+        </h1>
+        <p class="hero-sub">
+          Especialistas en avalúos para créditos hipotecarios (<strong>INFONAVIT Línea II y V, FOVISSSTE, ISSFAM, BANJERCITO y criterios SHF</strong>) y operaciones comerciales.
+        </p>
+        <p class="shf-respaldo">
+          Dictámenes elaborados bajo lineamientos técnicos SHF y normatividad vigente del sector.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-dorado">SOLICITAR COTIZACIÓN →</a>
+          <a href="#requisitos" class="btn btn-borde-claro">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="21" x2="4" y2="14"></line>
+              <line x1="4" y1="10" x2="4" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12" y2="3"></line>
+              <line x1="20" y1="21" x2="20" y2="16"></line>
+              <line x1="20" y1="12" x2="20" y2="3"></line>
+              <line x1="1" y1="14" x2="7" y2="14"></line>
+              <line x1="9" y1="8" x2="15" y2="8"></line>
+              <line x1="17" y1="16" x2="23" y2="16"></line>
+            </svg>
+            VER REQUISITOS POR CRÉDITO
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- ==================== CINTILLO INSTITUCIONAL ==================== -->
-    <div class="trust-strip">
-      <div class="container">
-        <div class="trust-content">
-          <span class="trust-label">Validez oficial y reconocimiento ante:</span>
-          <div class="trust-pills">
-            <span class="trust-pill">INFONAVIT LÍNEA II Y V</span>
-            <span class="trust-pill">FOVISSSTE</span>
-            <span class="trust-pill">ISSFAM</span>
-            <span class="trust-pill">BANJÉRCITO</span>
-            <span class="trust-pill">SOCIEDAD HIPOTECARIA FEDERAL (SHF)</span>
-            <span class="trust-pill">NOTARÍAS PÚBLICAS</span>
-            <span class="trust-pill">INSTITUCIONES BANCARIAS</span>
+      <aside class="panel-resumen" aria-label="Resumen de cobertura y organismos">
+        <div class="panel-header">
+          <div>
+            <div class="panel-eyebrow">CERTEZA PATRIMONIAL</div>
+            <h2>Dictámenes con Validez Oficial</h2>
+          </div>
+          <div class="panel-badge" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="metricas-grid">
+          <div class="metrica-box">
+            <strong>Vivienda y Comercial</strong>
+            <span>Créditos, avalúo y opinión de valor</span>
+          </div>
+          <div class="metrica-box">
+            <strong>3 Entidades</strong>
+            <span>Edo. Méx., CDMX e Hidalgo</span>
+          </div>
+          <div class="metrica-box">
+            <strong>Línea II y V</strong>
+            <span>Adquisición y Pago a Pasivos</span>
+          </div>
+          <div class="metrica-box">
+            <strong>4 Organismos</strong>
+            <span>INFONAVIT, FOVISSSTE, ISSFAM, BANJERCITO</span>
+          </div>
+        </div>
+
+        <div class="correo-barra">
+          <a href="mailto:inglitzyaguirre@azvaluaciones.com">inglitzyaguirre@azvaluaciones.com</a>
+          <button type="button" class="btn-copiar-mini" id="btnCopiarCorreo" aria-label="Copiar correo electrónico">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span id="textoCopiarCorreo">Copiar</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Especialidades y cobertura">
+    <div class="marquee-track">
+      <span>✦ OPINIONES DE VALOR ✦ ESTADO DE MÉXICO · CDMX · HIDALGO ✦ INFONAVIT LÍNEA II (ADQUISICIÓN) ✦ INFONAVIT LÍNEA V (PAGO A PASIVOS) ✦ FOVISSSTE ✦ ISSFAM ✦ BANJERCITO ✦ AVALÚOS COMERCIALES</span>
+      <span aria-hidden="true">✦ OPINIONES DE VALOR ✦ ESTADO DE MÉXICO · CDMX · HIDALGO ✦ INFONAVIT LÍNEA II (ADQUISICIÓN) ✦ INFONAVIT LÍNEA V (PAGO A PASIVOS) ✦ FOVISSSTE ✦ ISSFAM ✦ BANJERCITO ✦ AVALÚOS COMERCIALES</span>
+    </div>
+  </div>
+
+  <section id="servicios" class="seccion">
+    <div class="container">
+      <div class="eyebrow">NUESTROS SERVICIOS</div>
+      <h2 class="titulo-seccion">Avalúos Certificados y Comerciales</h2>
+      <p class="subtitulo-seccion">
+        Amplia experiencia en vivienda habitacional y residencial, departamentos en condominio, inmuebles usados y propiedades comerciales.
+      </p>
+
+      <div class="cards-grid">
+        <article class="card">
+          <div>
+            <span class="tag">FUERTE PRINCIPAL</span>
+            <h3>Avalúos INFONAVIT</h3>
+            <p>Dictámenes hipotecarios certificados para adquisición de vivienda nueva o usada y sustitución de hipoteca en desarrollos habitacionales y residenciales.</p>
+            <ul>
+              <li>Línea II: Adquisición de vivienda</li>
+              <li>Línea V: Pago a pasivos (liquidar hipoteca)</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="INFONAVIT · Línea II (Adquisición)">COTIZAR INFONAVIT</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="tag">VALIDEZ OFICIAL</span>
+            <h3>Avalúos FOVISSSTE</h3>
+            <p>Peritajes inmobiliarios elaborados bajo los lineamientos técnicos de FOVISSSTE para créditos tradicionales, Fovissste para Todos y aliados.</p>
+            <ul>
+              <li>Revisión de habitabilidad y superficies</li>
+              <li>Integración puntual para escrituración</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="Avalúo FOVISSSTE">COTIZAR FOVISSSTE</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="tag">CRÉDITO MILITAR</span>
+            <h3>Avalúos ISSFAM</h3>
+            <p>Valuación especializada para créditos hipotecarios del Instituto de Seguridad Social para las Fuerzas Armadas Mexicanas con estricto apego normativo.</p>
+            <ul>
+              <li>Adquisición y liberación de gravamen</li>
+              <li>Inspección física detallada</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="Avalúo ISSFAM">COTIZAR ISSFAM</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="tag">BANCA HIPOTECARIA</span>
+            <h3>Avalúos BANJERCITO</h3>
+            <p>Dictámenes técnicos para operaciones de crédito hipotecario ante el Banco Nacional del Ejército, Fuerza Aérea y Armada.</p>
+            <ul>
+              <li>Verificación documental y constructiva</li>
+              <li>Entrega ágil para trámite bancario</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="Avalúo BANJERCITO">COTIZAR BANJERCITO</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="tag">VALOR DE MERCADO</span>
+            <h3>Avalúos Comerciales</h3>
+            <p>Determinación objetiva del valor comercial real de casas, departamentos, locales y terrenos mediante análisis comparativo de mercado.</p>
+            <ul>
+              <li>Compraventa entre particulares</li>
+              <li>Respaldo para toma de decisiones</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="Avalúo Comercial">COTIZAR COMERCIAL</a>
+        </article>
+
+        <article class="card">
+          <div>
+            <span class="tag">ASESORÍA INMOBILIARIA</span>
+            <h3>Opiniones de Valor</h3>
+            <p>Estudio técnico de referencia para propietarios, asesores inmobiliarios e inversionistas que desean fijar un precio competitivo de salida.</p>
+            <ul>
+              <li>Análisis de oferta y demanda local</li>
+              <li>Entrega rápida y fundamentada</li>
+            </ul>
+          </div>
+          <a href="#contacto" class="btn btn-vino" data-servicio="Opinión de Valor">SOLICITAR OPINIÓN</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="requisitos" class="seccion-requisitos">
+    <div class="container">
+      <div class="req-header">
+        <div class="eyebrow">PREPARA TU TRÁMITE SIN CONTRATIEMPOS</div>
+        <h2 class="titulo-seccion">Guía Rápida de Documentación</h2>
+        <p class="subtitulo-seccion">
+          Selecciona el tipo de avalúo que necesitas para conocer los documentos básicos y agilizar tu proceso de escrituración.
+        </p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button type="button" class="tab-btn activa" data-tab="linea2" role="tab" aria-selected="true">INFONAVIT LÍNEA II</button>
+        <button type="button" class="tab-btn" data-tab="linea5" role="tab" aria-selected="false">INFONAVIT LÍNEA V (PASIVOS)</button>
+        <button type="button" class="tab-btn" data-tab="organismos" role="tab" aria-selected="false">FOVISSSTE / ISSFAM / BANJERCITO</button>
+        <button type="button" class="tab-btn" data-tab="comercial" role="tab" aria-selected="false">COMERCIAL / OPINIÓN DE VALOR</button>
+      </div>
+
+      <div class="doc-box" id="docPanel"></div>
+    </div>
+  </section>
+
+  <section id="proceso" class="seccion">
+    <div class="container">
+      <div class="eyebrow">METODOLOGÍA CLARA</div>
+      <h2 class="titulo-seccion">Nuestro Proceso en 4 Pasos</h2>
+      <p class="subtitulo-seccion">
+        Acompañamiento técnico y documental de principio a fin para que tu trámite avance sin retrasos.
+      </p>
+      <div class="pasos-grid">
+        <article class="paso-card">
+          <span class="paso-num">01</span>
+          <h3>Cotización y Revisión</h3>
+          <p>Revisamos la ubicación del inmueble y el tipo de crédito para enviarte presupuesto claro y listado de documentos.</p>
+        </article>
+        <article class="paso-card">
+          <span class="paso-num">02</span>
+          <h3>Visita Técnica</h3>
+          <p>Agendamos la inspección física del inmueble para levantamiento de medidas, calidades constructivas y entorno urbano.</p>
+        </article>
+        <article class="paso-card">
+          <span class="paso-num">03</span>
+          <h3>Análisis y Cálculo</h3>
+          <p>Integramos el estudio de mercado, costos de reposición y criterios técnicos SHF aplicables a la normatividad vigente del organismo hipotecario.</p>
+        </article>
+        <article class="paso-card">
+          <span class="paso-num">04</span>
+          <h3>Entrega Oficial</h3>
+          <p>Entregamos el dictamen certificado listo para continuar con la autorización de crédito y firma ante notario.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros" class="seccion nosotros-section">
+    <div class="container nosotros-grid">
+      <div class="nosotros-media">
+        <img src="assets/quienes-somos.jpg" alt="Revisión técnica de planos arquitectónicos en AZ Valuaciones" />
+        <div class="nosotros-caption">
+          <strong>RIGOR CONSTRUCTIVO</strong>
+          <span>Edo. Méx. · CDMX · Hidalgo</span>
+        </div>
+      </div>
+
+      <div class="nosotros-texto">
+        <div class="titulo-con-linea">
+          <h2 class="titulo-seccion">¿Quiénes somos?</h2>
+          <span class="titulo-linea" aria-hidden="true"></span>
+        </div>
+        <p>
+          En <strong>AZ VALUACIONES</strong> reunimos sólida experiencia en ingeniería civil y valuación inmobiliaria para ofrecer dictámenes objetivos, precisos y con plena validez oficial.
+        </p>
+        <p>
+          Nuestro enfoque especializado en créditos hipotecarios, vivienda y valuación comercial nos permite acompañar tanto a familias acreditadas como a asesores inmobiliarios y desarrolladores con tiempos de respuesta ágiles y atención personalizada.
+        </p>
+
+        <div class="pilares">
+          <div class="pilar">
+            <strong>OBJETIVIDAD</strong>
+            <span>Sustento técnico y normativo</span>
+          </div>
+          <div class="pilar">
+            <strong>AGILIDAD</strong>
+            <span>Visitas y entregas puntuales</span>
+          </div>
+          <div class="pilar">
+            <strong>CERCANÍA</strong>
+            <span>Asesoría directa en cada etapa</span>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ==================== SECCIÓN DE ESPECIALIDADES / SERVICIOS ==================== -->
-    <section id="servicios" class="services-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Nuestras Especialidades</span>
-          <h2 class="section-title">Servicios de Valuación Profesional</h2>
-          <p class="section-desc">
-            Amplia experiencia en conjuntos habitacionales de interés social, departamentos en condominio, vivienda usada y propiedades comerciales bajo lineamientos técnicos SHF.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <!-- Tarjeta 1: Avalúos Inmobiliarios -->
-          <article class="service-card">
-            <div class="service-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-            </div>
-            <h3 class="service-title">Avalúos Inmobiliarios e Hipotecarios</h3>
-            <p class="service-desc">
-              Dictámenes hipotecarios certificados para adquisición de vivienda nueva o usada y sustitución de hipoteca en conjuntos de interés social y residencial.
-            </p>
-            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo Inmobiliario">
-              <span>Consultar servicio</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </article>
-
-          <!-- Tarjeta 2: Avalúos Comerciales y Opiniones de Valor -->
-          <article class="service-card">
-            <div class="service-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                <line x1="9" y1="22" x2="9" y2="22.01"></line>
-                <line x1="15" y1="22" x2="15" y2="22.01"></line>
-                <line x1="8" y1="6" x2="10" y2="6"></line>
-                <line x1="14" y1="6" x2="16" y2="6"></line>
-                <line x1="8" y1="10" x2="10" y2="10"></line>
-                <line x1="14" y1="10" x2="16" y2="10"></line>
-                <line x1="8" y1="14" x2="10" y2="14"></line>
-                <line x1="14" y1="14" x2="16" y2="14"></line>
-              </svg>
-            </div>
-            <h3 class="service-title">Avalúos Comerciales y Opiniones de Valor</h3>
-            <p class="service-desc">
-              Determinación precisa del valor de mercado y opiniones de valor para locales, oficinas corporativas, plazas comerciales, bodegas y naves industriales para compraventa o arrendamiento.
-            </p>
-            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo Comercial">
-              <span>Consultar servicio</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </article>
-
-          <!-- Tarjeta 3: Avalúos de Terrenos -->
-          <article class="service-card">
-            <div class="service-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                <line x1="8" y1="2" x2="8" y2="18"></line>
-                <line x1="16" y1="6" x2="16" y2="22"></line>
-              </svg>
-            </div>
-            <h3 class="service-title">Avalúos de Terrenos</h3>
-            <p class="service-desc">
-              Avalúos de terrenos urbanos, suburbanos, rurales y rústicos para desarrollo inmobiliario, proyectos de inversión patrimonial o partición legal de herencias y sucesiones.
-            </p>
-            <a href="#contacto" class="service-link open-modal-btn" data-service="Avalúo de Terrenos">
-              <span>Consultar servicio</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== COTIZADOR INTERACTIVO ==================== -->
-    <section id="cotizador" class="calculator-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Estimación Inmediata</span>
-          <h2 class="section-title">Cotice su Avalúo en Línea</h2>
-          <p class="section-desc">
-            Complete los datos básicos de su propiedad para generar una cotización preliminar y contactar a un perito valuador con su solicitud lista.
-          </p>
-        </div>
-
-        <div class="calculator-card">
-          <div class="calc-grid">
-            <!-- Formulario interactivo -->
-            <div class="calc-form-wrap">
-              <!-- 1. Tipo de Inmueble -->
-              <div class="calc-form-group">
-                <label class="calc-label">1. Seleccione el Tipo de Propiedad:</label>
-                <div class="calc-options-grid">
-                  <div class="calc-radio-card">
-                    <input type="radio" id="prop-casa" name="calc-property" value="Casa o Departamento" checked>
-                    <label for="prop-casa" class="calc-radio-label">
-                      <span>🏠 Casa / Departamento</span>
-                    </label>
-                  </div>
-                  <div class="calc-radio-card">
-                    <input type="radio" id="prop-terreno" name="calc-property" value="Terreno o Lote">
-                    <label for="prop-terreno" class="calc-radio-label">
-                      <span>📐 Terreno / Lote</span>
-                    </label>
-                  </div>
-                  <div class="calc-radio-card">
-                    <input type="radio" id="prop-comercial" name="calc-property" value="Local u Oficina">
-                    <label for="prop-comercial" class="calc-radio-label">
-                      <span>🏢 Local / Oficina</span>
-                    </label>
-                  </div>
-                  <div class="calc-radio-card">
-                    <input type="radio" id="prop-industrial" name="calc-property" value="Nave o Bodega">
-                    <label for="prop-industrial" class="calc-radio-label">
-                      <span>🏭 Bodega / Industrial</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. Finalidad del Avalúo -->
-              <div class="calc-form-group">
-                <label for="calc-purpose" class="calc-label">2. Finalidad del Avalúo:</label>
-                <select id="calc-purpose" class="calc-select">
-                  <option value="Credito Infonavit Linea II / Linea V / Fovissste / Issfam / Banjercito">Crédito Hipotecario (Infonavit L-II / L-V, Fovissste, Issfam, Banjército o Banco)</option>
-                  <option value="Opinion de Valor / Compra-Venta Particular">Opinión de Valor / Compra-Venta entre particulares</option>
-                  <option value="Tramite Notarial / Escrituracion">Trámite Notarial / Escrituración</option>
-                  <option value="Herencia / Juicio Sucesorio">Juicio Sucesorio / Partición de Herencia</option>
-                  <option value="Fiscal / Catastral">Fiscal, Predial o Traslado de Dominio (ISAI)</option>
-                </select>
-              </div>
-
-              <!-- 3. Metros Cuadrados y Ubicación -->
-              <div class="calc-options-grid">
-                <div class="calc-form-group">
-                  <label for="calc-area" class="calc-label">3. Superficie estimada (m²):</label>
-                  <input type="number" id="calc-area" class="calc-input" placeholder="Ej. 120" min="10" step="5">
-                </div>
-                <div class="calc-form-group">
-                  <label for="calc-location" class="calc-label">4. Municipio o Alcaldía:</label>
-                  <input type="text" id="calc-location" class="calc-input" placeholder="Ej. Tecámac / Edo. Méx. / CDMX / Hidalgo">
-                </div>
-              </div>
-            </div>
-
-            <!-- Resumen y acción rápida por WhatsApp -->
-            <div class="calc-result-panel">
-              <div class="calc-result-header">
-                <h4>Resumen de Cotización</h4>
-                <p>Dictamen con peritaje certificado y validez ante instituciones oficiales.</p>
-              </div>
-
-              <div class="calc-summary-body">
-                <div class="calc-summary-item">
-                  <span>Inmueble:</span>
-                  <span id="summary-property">Casa / Departamento</span>
-                </div>
-                <div class="calc-summary-item">
-                  <span>Propósito:</span>
-                  <span id="summary-purpose">Crédito Hipotecario</span>
-                </div>
-                <div class="calc-summary-item">
-                  <span>Modalidad:</span>
-                  <span id="summary-type">Dictamen Oficial Certificado</span>
-                </div>
-              </div>
-
-              <div class="calc-delivery-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <div>
-                  <h5>Tiempo estimado de entrega</h5>
-                  <p id="summary-time">48 a 72 hrs hábiles tras inspección</p>
-                </div>
-              </div>
-
-              <a href="#" id="btn-calc-whatsapp" class="calc-whatsapp-btn" target="_blank" rel="noopener">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
-                <span>Cotizar por WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== EL PROCESO EN 4 PASOS ==================== -->
-    <section id="proceso" class="process-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Metodología Clara</span>
-          <h2 class="section-title">Nuestro Proceso en 4 Pasos</h2>
-          <p class="section-desc">
-            Un flujo de trabajo transparente, ágil y con estricto rigor normativo para garantizar la certeza jurídica de su patrimonio.
-          </p>
-        </div>
-
-        <div class="process-steps-grid">
-          <!-- Paso 01 -->
-          <div class="process-step-card">
-            <div class="process-num">01</div>
-            <h4 class="process-title">Cotización y Revisión</h4>
-            <p class="process-desc">
-              Revisamos la ubicación del inmueble y el tipo de crédito para enviarte presupuesto claro y listado de documentos.
-            </p>
-          </div>
-
-          <!-- Paso 02 -->
-          <div class="process-step-card">
-            <div class="process-num">02</div>
-            <h4 class="process-title">Visita Técnica</h4>
-            <p class="process-desc">
-              Agendamos la inspección física del inmueble para levantamiento de medidas, calidades constructivas y entorno urbano.
-            </p>
-          </div>
-
-          <!-- Paso 03 -->
-          <div class="process-step-card">
-            <div class="process-num">03</div>
-            <h4 class="process-title">Análisis y Cálculo</h4>
-            <p class="process-desc">
-              Integramos el estudio de mercado, costos de reposición y normatividad vigente del organismo hipotecario.
-            </p>
-          </div>
-
-          <!-- Paso 04 -->
-          <div class="process-step-card">
-            <div class="process-num">04</div>
-            <h4 class="process-title">Entrega Oficial</h4>
-            <p class="process-desc">
-              Entregamos el dictamen certificado listo para continuar con la autorización de crédito y firma ante notario.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== DOCUMENTACIÓN REQUERIDA ==================== -->
-    <section id="documentacion" class="docs-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Requisitos y Trámites</span>
-          <h2 class="section-title">Documentación Requerida</h2>
-          <p class="section-desc">
-            Consulte la documentación básica para iniciar el dictamen técnico de acuerdo a su tipo de inmueble y trámite (Infonavit Línea II y V, Fovissste, Issfam, Banjército o Comercial).
-          </p>
-        </div>
-
-        <div class="docs-wrapper">
-          <!-- Botones de pestañas -->
-          <div class="docs-tabs-nav">
-            <button class="docs-tab-btn active" data-tab="tab-hipotecario">Infonavit Línea II · Compra</button>
-            <button class="docs-tab-btn" data-tab="tab-comercial">Comercial / Opinión de Valor</button>
-            <button class="docs-tab-btn" data-tab="tab-terreno">Terrenos y Predios</button>
-          </div>
-
-          <!-- Panel 1: Hipotecario / Infonavit Línea II -->
-          <div id="tab-hipotecario" class="docs-tab-pane active">
-            <p style="margin-bottom: 18px; opacity: 0.9;">
-              <strong>Avalúo INFONAVIT Línea II (Adquisición de Vivienda):</strong> Dictamen técnico obligatorio para comprar vivienda nueva o usada mediante crédito INFONAVIT tradicional, Unamos Créditos o Cofinavit. Enfoque principal en vivienda de interés social, departamentos en condominio y casas habitación en Edo. Méx., CDMX e Hidalgo.
-            </p>
-            <ul class="docs-list">
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Escritura Pública Completa</h5>
-                  <p>Con datos de inscripción en el Registro Público de la Propiedad.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Boleta Predial y Boleta de Agua Vigentes</h5>
-                  <p>Comprobantes actualizados del inmueble.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="7" r="4"></circle>
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                </svg>
-                <div>
-                  <h5>Identificación Oficial (INE)</h5>
-                  <p>Vigente del vendedor y del comprador.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-                <div>
-                  <h5>Planos Arquitectónicos o Croquis</h5>
-                  <p>Croquis o planos de distribución (si se cuenta con ellos).</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Panel 2: Comercial -->
-          <div id="tab-comercial" class="docs-tab-pane">
-            <ul class="docs-list">
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Título de Propiedad o Escritura</h5>
-                  <p>Documento constitutivo y facultades notariales del representante legal.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-                <div>
-                  <h5>Planos Arquitectónicos</h5>
-                  <p>Planos de distribución arquitectónica, cortes y fachadas (si se cuenta con ellos).</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Licencia de Uso de Suelo</h5>
-                  <p>Permisos vigentes o cédula de zonificación según aplique.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Comprobantes Fiscales y Predial</h5>
-                  <p>Último recibo predial pagado y constancia de situación fiscal.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Panel 3: Terrenos -->
-          <div id="tab-terreno" class="docs-tab-pane">
-            <ul class="docs-list">
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                </svg>
-                <div>
-                  <h5>Título de Propiedad o Certificado</h5>
-                  <p>Escritura pública, título parcelario o certificado de derechos (según régimen).</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                </svg>
-                <div>
-                  <h5>Plano Topográfico y Medidas</h5>
-                  <p>Plano o croquis con rumbos, distancias y colindancias delimitadas.</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <div>
-                  <h5>Alineamiento y Número Oficial</h5>
-                  <p>Constancia de alineamiento o cédula catastral municipal (opcional).</p>
-                </div>
-              </li>
-              <li class="docs-list-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="7" r="4"></circle>
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                </svg>
-                <div>
-                  <h5>Identificación del Titular</h5>
-                  <p>Copia de identificación oficial vigente del solicitante o apoderado.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SHOWCASE DE IDENTIDAD, ¿QUIÉNES SOMOS? Y COBERTURA EN 3 ESTADOS ==================== -->
-    <section id="cobertura" class="showcase-section">
-      <div class="container">
-        <div class="showcase-grid">
-          <!-- Columna Imagen Arquitectura y Avalúos -->
-          <div class="showcase-image-box">
-            <img src="assets/images/architecture-luxury.jpg" alt="Arquitectura residencial contemporánea valuada profesionalmente por AZ Valuaciones">
-          </div>
-
-          <!-- Columna ¿Quiénes Somos? y Diferenciadores -->
-          <div class="showcase-features">
-            <div>
-              <span class="section-tag">¿Quiénes Somos? · Rigor y Respaldo Oficial</span>
-              <h2 class="section-title">Confidencialidad, Rigor y Respaldo Oficial</h2>
-              <p class="section-desc" style="margin: 0 0 14px 0;">
-                En AZ Valuaciones reunimos sólida experiencia en ingeniería civil y valuación inmobiliaria para ofrecer dictámenes objetivos, precisos y con plena validez oficial.
-              </p>
-              <p class="section-desc" style="margin: 0 0 24px 0;">
-                Nuestro enfoque principal en vivienda de interés social y créditos hipotecarios nos permite acompañar tanto a familias acreditadas como a asesores inmobiliarios y desarrolladores con tiempos de respuesta ágiles y atención personalizada.
-              </p>
-            </div>
-
-            <div class="showcase-feature-item">
-              <div class="showcase-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                </svg>
-              </div>
-              <div class="showcase-feature-info">
-                <h4>Objetividad · Peritos con Cédula Profesional</h4>
-                <p>Sustento técnico y normativo: dictámenes elaborados y firmados por peritos valuadores con posgrado acreditado, lineamientos técnicos SHF y registro activo ante instituciones de crédito.</p>
-              </div>
-            </div>
-
-            <div class="showcase-feature-item">
-              <div class="showcase-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="showcase-feature-info">
-                <h4>Agilidad · Visitas y Entregas Puntuales</h4>
-                <p>Optimizamos los tiempos de gabinete y levantamiento para entregar su expediente en un plazo de 48 a 72 horas hábiles tras la visita.</p>
-              </div>
-            </div>
-
-            <div class="showcase-feature-item">
-              <div class="showcase-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-              <div class="showcase-feature-info">
-                <h4>Cercanía y Aceptación Garantizada</h4>
-                <p>Asesoría directa en cada etapa y cumplimiento estricto con las Normas Mexicanas de Valuación (NMX-C-459-ONNCCE) e IVS para Infonavit (Línea II y V), Fovissste, Issfam, Banjército y notarías.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==================== MAPA Y COBERTURA EN 3 ESTADOS (CON COLORES DE TU PÁGINA) ==================== -->
-        <div style="margin-top: 64px; padding-top: 48px; border-top: 1px solid rgba(26, 24, 23, 0.12);">
-          <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px;">
-            <div>
-              <span class="section-tag">Presencia Regional</span>
-              <h3 class="section-title" style="margin-bottom: 0;">Cobertura en 3 Estados Clave</h3>
-            </div>
-            <p class="section-desc" style="margin: 0; max-width: 380px;">
-              Selecciona una entidad en el mapa o en los botones para consultar las principales zonas y corredores que atendemos.
-            </p>
-          </div>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 24px; align-items: stretch;">
-            <!-- Mapa esquemático con los tonos de tu página -->
-            <div style="background: #1C1917; color: #F7F5F0; border-radius: 16px; padding: 24px; border: 1px solid rgba(184, 142, 74, 0.35); display: flex; flex-direction: column; justify-content: space-between; min-height: 360px;">
-              <div style="display: flex; justify-content: space-between; gap: 10px; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #D4AF6A; margin-bottom: 12px;">
-                <span>Zona Centro · República Mexicana</span>
-                <span>Red Activa de Valuación</span>
-              </div>
-
-              <svg viewBox="0 0 460 270" role="img" aria-label="Mapa de cobertura en Estado de México, Ciudad de México e Hidalgo" style="width: 100%; height: auto; max-height: 250px;">
-                <defs>
-                  <pattern id="azGrid" width="24" height="24" patternUnits="userSpaceOnUse">
-                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(247,245,240,0.06)" stroke-width="1"/>
-                  </pattern>
-                </defs>
-                <rect width="460" height="270" fill="url(#azGrid)" rx="8"/>
-
-                <!-- Hidalgo -->
-                <g id="map-node-hidalgo" style="cursor: pointer;" onclick="seleccionarEstadoCobertura('hidalgo')">
-                  <polygon points="245,32 342,52 365,105 315,135 235,115 215,72" fill="#5C4426" stroke="#D4AF6A" stroke-width="2"/>
-                  <circle cx="292" cy="82" r="5" fill="#F7F5F0" stroke="#D4AF6A" stroke-width="2"/>
-                  <rect x="304" y="69" width="84" height="24" rx="12" fill="#1C1917" stroke="#D4AF6A" stroke-width="1.5"/>
-                  <text x="346" y="85" fill="#F7F5F0" font-size="11" font-weight="600" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">HIDALGO</text>
-                </g>
-
-                <!-- Estado de México -->
-                <g id="map-node-edomex" style="cursor: pointer;" onclick="seleccionarEstadoCobertura('edomex')">
-                  <polygon points="105,112 225,118 282,158 265,222 175,242 92,205 78,152" fill="#7A5930" stroke="#E5C588" stroke-width="2.5"/>
-                  <circle cx="188" cy="168" r="5.5" fill="#F7F5F0" stroke="#E5C588" stroke-width="2"/>
-                  <rect x="64" y="156" width="114" height="24" rx="12" fill="#1C1917" stroke="#E5C588" stroke-width="1.5"/>
-                  <text x="121" y="172" fill="#F7F5F0" font-size="10.5" font-weight="600" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">ESTADO DE MÉXICO</text>
-                </g>
-
-                <!-- CDMX -->
-                <g id="map-node-cdmx" style="cursor: pointer;" onclick="seleccionarEstadoCobertura('cdmx')">
-                  <polygon points="205,162 248,166 254,198 228,214 198,196" fill="#B88E4A" stroke="#F7F5F0" stroke-width="2"/>
-                  <circle cx="226" cy="188" r="4.5" fill="#1C1917" stroke="#F7F5F0" stroke-width="2"/>
-                  <rect x="242" y="196" width="128" height="24" rx="12" fill="#1C1917" stroke="#D4AF6A" stroke-width="1.5"/>
-                  <text x="306" y="212" fill="#F7F5F0" font-size="10.5" font-weight="600" text-anchor="middle" font-family="Plus Jakarta Sans, sans-serif">CIUDAD DE MÉXICO</text>
-                </g>
-
-                <!-- Conexiones -->
-                <line x1="292" y1="82" x2="188" y2="168" stroke="#D4AF6A" stroke-width="1.5" stroke-dasharray="4 4"/>
-                <line x1="292" y1="82" x2="226" y2="188" stroke="#D4AF6A" stroke-width="1.5" stroke-dasharray="4 4"/>
-                <line x1="188" y1="168" x2="226" y2="188" stroke="#F7F5F0" stroke-width="1.5" stroke-dasharray="3 3"/>
-              </svg>
-
-              <div style="display: flex; justify-content: center; gap: 22px; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #D4AF6A; padding-top: 10px; border-top: 1px solid rgba(247,245,240,0.12);">
-                <span>Precisión</span>
-                <span>·</span>
-                <span>Valor</span>
-                <span>·</span>
-                <span>Confianza</span>
-              </div>
-            </div>
-
-            <!-- Panel interactivo de selección de estado -->
-            <div style="display: flex; flex-direction: column; gap: 16px;">
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                <button type="button" id="tab-estado-edomex" onclick="seleccionarEstadoCobertura('edomex')" style="padding: 12px 10px; border-radius: 10px; border: 1px solid #8C6A3E; background: #1C1917; color: #F7F5F0; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
-                  EDO. MÉX.
-                </button>
-                <button type="button" id="tab-estado-cdmx" onclick="seleccionarEstadoCobertura('cdmx')" style="padding: 12px 10px; border-radius: 10px; border: 1px solid rgba(26,24,23,0.18); background: #FFFDF9; color: #1C1917; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
-                  CDMX
-                </button>
-                <button type="button" id="tab-estado-hidalgo" onclick="seleccionarEstadoCobertura('hidalgo')" style="padding: 12px 10px; border-radius: 10px; border: 1px solid rgba(26,24,23,0.18); background: #FFFDF9; color: #1C1917; font-weight: 600; font-size: 0.82rem; cursor: pointer;">
-                  HIDALGO
-                </button>
-              </div>
-
-              <div id="panel-detalle-estado" style="background: #FFFDF9; border: 1px solid rgba(26,24,23,0.12); border-radius: 16px; padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 18px;">
-                <div>
-                  <span id="estado-badge" style="display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(140,106,62,0.14); color: #6E5028; padding: 5px 10px; border-radius: 999px; margin-bottom: 10px;">
-                    Sede Principal · Cobertura Total
-                  </span>
-                  <h4 id="estado-titulo" style="font-size: 1.5rem; margin-bottom: 8px; color: #1C1917;">Estado de México</h4>
-                  <p id="estado-desc" style="font-size: 0.92rem; opacity: 0.85; margin-bottom: 16px;">
-                    Atención prioritaria en los principales corredores habitacionales de interés social y residencial del Valle de México y Valle de Toluca.
-                  </p>
-                  <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; padding-top: 12px; border-top: 1px solid rgba(26,24,23,0.1); margin-bottom: 10px;">
-                    Municipios y Zonas Frecuentes
-                  </div>
-                  <ul id="estado-zonas" style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 0.88rem;">
-                    <li>• Tecámac y Ojo de Agua</li>
-                    <li>• Zumpango y Huehuetoca</li>
-                    <li>• Ecatepec y Coacalco</li>
-                    <li>• Tultitlán, Cuautitlán y Tlalnepantla</li>
-                    <li>• Toluca, Metepec y Lerma</li>
-                    <li>• Texcoco, Chalco e Ixtapaluca</li>
-                  </ul>
-                </div>
-
-                <a id="estado-cta" href="#contacto" class="btn btn-primary" style="width: 100%; text-align: center;">
-                  Cotizar Avalúo en Estado de México →
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== SECCIÓN DE CONTACTO & UBICACIÓN ==================== -->
-    <section id="contacto" class="contact-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-tag">Contacto Directo · Atención Personalizada</span>
-          <h2 class="section-title">Comience su Solicitud</h2>
-          <p class="section-desc">
-            Será un gusto atenderte y cotizar tu avalúo hoy mismo en Estado de México, Ciudad de México, Hidalgo y zonas conurbadas.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <!-- Datos de Contacto -->
-          <div class="contact-info-card">
-            <h3>Atención Inmediata</h3>
-            <p>Comuníquese con nosotros para agendar su visita de inspección o resolver cualquier duda sobre su trámite.</p>
-
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                </div>
-                <div class="contact-item-content">
-                  <h5>Ubicación y Cobertura</h5>
-                  <p>Los Héroes Tecámac · Edo. Méx., CDMX e Hidalgo</p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                </div>
-                <div class="contact-item-content">
-                  <h5>Teléfono / WhatsApp</h5>
-                  <p><a href="https://wa.me/525582261987" target="_blank" rel="noopener">+52 55 8226 1987</a></p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                    <polyline points="22,6 12,13 2,6"></polyline>
-                  </svg>
-                </div>
-                <div class="contact-item-content">
-                  <h5>Correo Electrónico</h5>
-                  <p><a href="mailto:inglitzyaguirre@azvaluaciones.com">inglitzyaguirre@azvaluaciones.com</a></p>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-item-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </div>
-                <div class="contact-item-content">
-                  <h5>Horario de Atención</h5>
-                  <p>Lunes a Viernes: 9:00 - 18:00 hrs<br>Sábados: 9:00 - 14:00 hrs</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Formulario de Contacto Funcional -->
-          <div class="contact-form-card">
-            <form id="main-contact-form">
-              <div class="form-grid-2">
-                <div class="form-group">
-                  <label for="contact-name" class="form-label">Nombre Completo *</label>
-                  <input type="text" id="contact-name" class="form-control" placeholder="Su nombre" required>
-                </div>
-                <div class="form-group">
-                  <label for="contact-phone" class="form-label">Teléfono / WhatsApp *</label>
-                  <input type="tel" id="contact-phone" class="form-control" placeholder="10 dígitos" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-service" class="form-label">Especialidad de Interés *</label>
-                <select id="contact-service" class="form-control" required>
-                  <option value="Avalúo Inmobiliario / Habitacional">Avalúos Inmobiliarios (Infonavit L-II / L-V, Fovissste, Issfam, Banjército)</option>
-                  <option value="Avalúo Comercial / Opinión de Valor">Avalúos Comerciales y Opiniones de Valor (Locales, Oficinas, Bodegas)</option>
-                  <option value="Avalúo de Terrenos / Predios">Avalúos de Terrenos (Urbanos, Rústicos)</option>
-                  <option value="Avalúo Notarial / Fiscal / Catastral">Avalúo Notarial / Fiscal / Traslado de Dominio</option>
-                  <option value="Otro tipo de valuación">Otro requerimiento especial</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="contact-message" class="form-label">Detalles del Inmueble y Ubicación</label>
-                <textarea id="contact-message" class="form-control" placeholder="Indique brevemente municipio, entidad (Edo. Méx., CDMX o Hidalgo), metros aproximados y trámite..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
-                Enviar Solicitud por WhatsApp
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="site-footer">
+  <section id="cobertura" class="seccion">
     <div class="container">
-      <div class="footer-top">
-        <!-- Logo en footer -->
-        <a href="#inicio" class="brand-logo" aria-label="Ir arriba">
-          <img src="assets/images/logo-nav-transparent.png" alt="AZ Valuaciones" width="112" height="60">
-        </a>
+      <div class="eyebrow">PRESENCIA REGIONAL</div>
+      <h2 class="titulo-seccion">Cobertura en 3 Estados Clave</h2>
+      <p class="subtitulo-seccion" style="margin-bottom: 18px;">
+        Atención prioritaria en los principales corredores habitacionales y comerciales del Valle de México, Valle de Toluca, Ciudad de México e Hidalgo.
+      </p>
+      <div class="zonas-chips">
+        <span class="zona-chip">Tecámac y Ojo de Agua</span>
+        <span class="zona-chip">Zumpango y Huehuetoca</span>
+        <span class="zona-chip">Ecatepec y Coacalco</span>
+        <span class="zona-chip">Tultitlán, Cuautitlán y Tlalnepantla</span>
+        <span class="zona-chip">Toluca, Metepec y Lerma</span>
+        <span class="zona-chip">Texcoco, Chalco e Ixtapaluca</span>
+        <span class="zona-chip">CDMX</span>
+        <span class="zona-chip">Hidalgo</span>
+      </div>
+      <a href="#contacto" class="btn btn-vino">COTIZAR AVALÚO EN MI ZONA</a>
+    </div>
+  </section>
 
-        <!-- Datos directos -->
-        <div class="footer-info-strip">
-          <span>
-            📍 Los Héroes Tecámac · Edo. Méx., CDMX e Hidalgo
-          </span>
-          <a href="https://wa.me/525582261987" target="_blank" rel="noopener">
-            📞 Cel: +52 55 8226 1987
-          </a>
-          <a href="mailto:inglitzyaguirre@azvaluaciones.com">
-            ✉️ Email: inglitzyaguirre@azvaluaciones.com
-          </a>
+  <section id="contacto" class="seccion contacto-section">
+    <div class="container dos-cols">
+      <div class="contacto-info-card">
+        <div class="eyebrow">ATENCIÓN PERSONALIZADA</div>
+        <h2 class="titulo-seccion">Contáctanos</h2>
+        <p>
+          Será un gusto atenderte y cotizar tu avalúo hoy mismo. Respuesta directa a tu correo o teléfono con el listado exacto para tu trámite.
+        </p>
+        <div class="contacto-dato">
+          <span>CORREO DIRECTO</span>
+          <a href="mailto:inglitzyaguirre@azvaluaciones.com">inglitzyaguirre@azvaluaciones.com</a>
         </div>
-
-        <!-- Redes sociales minimalistas -->
-        <div class="footer-socials">
-          <a href="https://wa.me/525582261987" class="social-btn" aria-label="WhatsApp de AZ Valuaciones" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="Facebook de AZ Valuaciones">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <a href="#" class="social-btn" aria-label="Instagram de AZ Valuaciones">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
+        <div class="contacto-dato">
+          <span>COBERTURA</span>
+          <strong>Estado de México · Ciudad de México · Hidalgo</strong>
+        </div>
+        <div class="contacto-dato" style="margin-bottom: 0;">
+          <span>ORGANISMOS Y OPERACIONES</span>
+          <strong>INFONAVIT (Línea II y V) · FOVISSSTE · ISSFAM · BANJERCITO · Comerciales</strong>
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 AZ Valuaciones. Todos los derechos reservados. Expertos en Valuación Inmobiliaria.</p>
-        <p>Dictámenes Periciales con Cédula Profesional y Respaldo Oficial.</p>
+      <form class="cotizacion-form" id="formCotizacion">
+        <div class="campo">
+          <label for="nombre">NOMBRE COMPLETO *</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Ej. Arq. Carlos Mendoza" required />
+        </div>
+        <div class="campo">
+          <label for="contactoInput">TELÉFONO / CORREO ELECTRÓNICO *</label>
+          <input id="contactoInput" name="contactoInput" type="text" placeholder="Ej. 55 1234 5678 / correo@dominio.com" required />
+        </div>
+        <div class="campo">
+          <label for="tipoAvaluo">TIPO DE AVALÚO *</label>
+          <select id="tipoAvaluo" name="tipoAvaluo">
+            <option value="INFONAVIT · Línea II (Adquisición)">INFONAVIT · Línea II (Adquisición)</option>
+            <option value="INFONAVIT · Línea V (Pago a Pasivos)">INFONAVIT · Línea V (Pago a Pasivos)</option>
+            <option value="Avalúo FOVISSSTE">Avalúo FOVISSSTE</option>
+            <option value="Avalúo ISSFAM">Avalúo ISSFAM</option>
+            <option value="Avalúo BANJERCITO">Avalúo BANJERCITO</option>
+            <option value="Avalúo Comercial">Avalúo Comercial</option>
+            <option value="Opinión de Valor">Opinión de Valor</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="entidad">ENTIDAD DEL INMUEBLE *</label>
+          <select id="entidad" name="entidad">
+            <option value="Estado de México">Estado de México</option>
+            <option value="Ciudad de México">Ciudad de México</option>
+            <option value="Hidalgo">Hidalgo</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="municipio">MUNICIPIO / ALCALDÍA</label>
+          <input id="municipio" name="municipio" type="text" placeholder="Ej. Tecámac, Ecatepec, Tizayuca, GAM..." />
+        </div>
+        <button type="submit" class="btn btn-vino">SOLICITA UNA COTIZACIÓN</button>
+        <div class="mensaje-envio" id="mensajeEnvio" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">
+        <img src="assets/logo-az-completo.png" alt="AZ Valuaciones" />
       </div>
+      <div>AZ VALUACIONES · PRECISIÓN · VALOR · CONFIANZA · © 2026 AZ Valuaciones · Estado de México · CDMX · Hidalgo</div>
     </div>
   </footer>
 
-  <!-- ==================== BOTÓN FLOTANTE WHATSAPP ==================== -->
-  <a href="https://wa.me/525582261987?text=Hola%20AZ%20Valuaciones,%20me%20gustar%C3%ADa%20cotizar%20un%20aval%C3%BAo" 
-     class="whatsapp-float" 
-     target="_blank" 
-     rel="noopener"
-     aria-label="Contactar por WhatsApp para cotizar avalúo">
-    <svg viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-    </svg>
-    <span>Cotizar Avalúo</span>
-  </a>
-
-  <!-- ==================== MODAL SOLICITAR AVALÚO ==================== -->
-  <div id="modal-solicitar" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <div class="modal-box">
-      <button class="modal-close-btn" aria-label="Cerrar ventana">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
-      <div class="modal-header">
-        <span class="section-tag" style="margin-bottom: 6px;">Solicitud Rápida</span>
-        <h3 id="modal-title">Solicitar Avalúo Profesional</h3>
-        <p>Complete sus datos para recibir atención personalizada por parte de un perito valuador.</p>
-      </div>
-
-      <form id="modal-solicitar-form">
-        <div class="form-group">
-          <label for="modal-nombre" class="form-label">Nombre Completo *</label>
-          <input type="text" id="modal-nombre" class="form-control" placeholder="Ej. Lic. Roberto Mendoza" required>
-        </div>
-
-        <div class="form-group">
-          <label for="modal-telefono" class="form-label">Teléfono de Contacto / WhatsApp *</label>
-          <input type="tel" id="modal-telefono" class="form-control" placeholder="Ej. 55 1234 5678" required>
-        </div>
-
-        <div class="form-group">
-          <label for="modal-servicio" class="form-label">Tipo de Avalúo Requerido *</label>
-          <select id="modal-servicio" class="form-control" required>
-            <option value="Avalúo Inmobiliario">Avalúo Inmobiliario (Infonavit L-II / L-V, Fovissste, Issfam, Banjército)</option>
-            <option value="Avalúo Comercial y Opinión de Valor">Avalúo Comercial y Opinión de Valor (Local / Oficina / Plaza / Nave)</option>
-            <option value="Avalúo de Terrenos">Avalúo de Terrenos (Urbano / Rústico)</option>
-            <option value="Avalúo Notarial / Fiscal">Avalúo Notarial / Fiscal (Traslado de Dominio / ISAI)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="modal-ubicacion" class="form-label">Ubicación del Inmueble</label>
-          <input type="text" id="modal-ubicacion" class="form-control" placeholder="Municipio, Alcaldía, Colonia o Estado">
-        </div>
-
-        <div class="form-group">
-          <label for="modal-mensaje" class="form-label">Comentarios Adicionales (Opcional)</label>
-          <textarea id="modal-mensaje" class="form-control" style="min-height: 80px;" placeholder="¿Cuenta con escrituras y predial? ¿Para qué fecha necesita el dictamen?"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
-          Enviar y Contactar por WhatsApp
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
   <script>
-    const datosEstadosCobertura = {
-      edomex: {
-        badge: 'Sede Principal · Cobertura Total',
-        titulo: 'Estado de México',
-        desc: 'Atención prioritaria en los principales corredores habitacionales de interés social y residencial del Valle de México y Valle de Toluca.',
-        zonas: [
-          'Tecámac y Ojo de Agua',
-          'Zumpango y Huehuetoca',
-          'Ecatepec y Coacalco',
-          'Tultitlán, Cuautitlán y Tlalnepantla',
-          'Toluca, Metepec y Lerma',
-          'Texcoco, Chalco e Ixtapaluca'
+    const iconos = {
+      doc: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg>`,
+      medidas: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>`,
+      agua: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`,
+      regla: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/></svg>`,
+      plano: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>`,
+      pin: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+      id: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="17" y2="14"/></svg>`,
+      escudo: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+      grafica: `<svg class="req-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>`
+    };
+
+    const guias = {
+      linea2: {
+        badge: "ADQUISICIÓN · COMPRA - VENTA",
+        titulo: "Avalúo INFONAVIT Línea II (Adquisición de Vivienda)",
+        descripcion:
+          "Dictamen técnico obligatorio para comprar vivienda nueva o usada mediante crédito INFONAVIT tradicional, Unamos Créditos o Cofinavit.",
+        enfoque:
+          "Casas habitación, departamentos en condominio y propiedades residenciales en Edo. Méx., CDMX e Hidalgo.",
+        servicio: "INFONAVIT · Línea II (Adquisición)",
+        asunto: "Nombre del comprador",
+        inmueble: [
+          { icono: "doc", texto: "Escritura completa y anexos" },
+          { icono: "medidas", texto: "Medidas y colindancias" },
+          { icono: "doc", texto: "Boleta predial (año en curso)" },
+          { icono: "agua", texto: "Boleta de agua (último bimestre)" },
+          { icono: "regla", texto: "Constancia de alineamiento y número oficial" },
+          { icono: "plano", texto: "Plano acotado" },
+          { icono: "pin", texto: "Ubicación exacta (Google Maps)" }
         ],
-        cta: 'Cotizar Avalúo en Estado de México →',
-        inputValue: 'Estado de México'
+        propietario: [
+          { icono: "id", texto: "INE vigente (ambos lados)" },
+          { icono: "id", texto: "CURP" },
+          { icono: "doc", texto: "Constancia de Situación Fiscal (RFC)" }
+        ],
+        solicitanteTitulo: "COMPRADOR",
+        solicitante: [
+          { icono: "doc", texto: "Solicitud de avalúo (requisitada y firmada)" },
+          { icono: "id", texto: "INE vigente (ambos lados)" },
+          { icono: "id", texto: "CURP" },
+          { icono: "doc", texto: "Constancia de Situación Fiscal (RFC)" },
+          { icono: "escudo", texto: "Número de Seguridad Social (NSS)" },
+          { icono: "grafica", texto: "Precalificación vigente" }
+        ]
       },
-      cdmx: {
-        badge: 'Cobertura Metropolitana',
-        titulo: 'Ciudad de México',
-        desc: 'Atención en alcaldías de la Ciudad de México para vivienda habitacional, condominios, créditos hipotecarios y trámites notariales.',
-        zonas: [
-          'Gustavo A. Madero y Azcapotzalco',
-          'Iztapalapa y Tláhuac',
-          'Benito Juárez y Cuauhtémoc',
-          'Coyoacán y Álvaro Obregón',
-          'Miguel Hidalgo y Tlalpan',
-          'Iztacalco y Venustiano Carranza'
+      linea5: {
+        badge: "LIQUIDACIÓN · PAGO A PASIVOS",
+        titulo: "Avalúo INFONAVIT Línea V (Pago a Pasivos)",
+        descripcion:
+          "Evaluación técnica para liquidar o sustituir una hipoteca vigente con apego a los criterios técnicos y normativos actuales.",
+        enfoque:
+          "Vivienda particular y departamentos en condominio en Edo. Méx., CDMX e Hidalgo.",
+        servicio: "INFONAVIT · Línea V (Pago a Pasivos)",
+        asunto: "Nombre del acreditado",
+        inmueble: [
+          { icono: "doc", texto: "Escritura pública inscrita y anexos" },
+          { icono: "medidas", texto: "Medidas y colindancias" },
+          { icono: "doc", texto: "Boleta predial (año en curso)" },
+          { icono: "agua", texto: "Boleta de agua (último bimestre)" },
+          { icono: "regla", texto: "Constancia de alineamiento y número oficial" },
+          { icono: "plano", texto: "Plano acotado o croquis del inmueble" },
+          { icono: "pin", texto: "Ubicación exacta (Google Maps)" }
         ],
-        cta: 'Cotizar Avalúo en Ciudad de México →',
-        inputValue: 'Ciudad de México'
+        propietario: [
+          { icono: "doc", texto: "Estado de cuenta o carta saldo del crédito actual" },
+          { icono: "id", texto: "INE vigente del propietario / acreditado" },
+          { icono: "doc", texto: "Constancia de Situación Fiscal (RFC)" }
+        ],
+        solicitanteTitulo: "ACREDITADO",
+        solicitante: [
+          { icono: "doc", texto: "Solicitud de avalúo (requisitada y firmada)" },
+          { icono: "id", texto: "INE vigente (ambos lados)" },
+          { icono: "id", texto: "CURP" },
+          { icono: "escudo", texto: "Número de Seguridad Social (NSS)" },
+          { icono: "grafica", texto: "Precalificación vigente INFONAVIT" }
+        ]
       },
-      hidalgo: {
-        badge: 'Cobertura Regional',
-        titulo: 'Hidalgo',
-        desc: 'Valuación en conjuntos habitacionales, vivienda de interés social, desarrollos y predios en zonas estratégicas de Hidalgo.',
-        zonas: [
-          'Pachuca y Mineral de la Reforma',
-          'Tizayuca y corredor metropolitano',
-          'Atotonilco de Tula y Tula de Allende',
-          'Tepeji del Río',
-          'Mineral del Monte y zonas aledañas',
-          'Corredores habitacionales activos'
+      organismos: {
+        badge: "SECTOR PÚBLICO Y FUERZAS ARMADAS",
+        titulo: "Avalúos FOVISSSTE / ISSFAM / BANJERCITO",
+        descripcion:
+          "Dictámenes técnicos para trámites hipotecarios y de escrituración ante organismos federales y banca militar.",
+        enfoque:
+          "Propiedades habitacionales y residenciales con estricto apego a los lineamientos de cada organismo.",
+        servicio: "Avalúo FOVISSSTE",
+        asunto: "Nombre del acreditado y organismo",
+        inmueble: [
+          { icono: "doc", texto: "Escritura pública completa con inscripción" },
+          { icono: "medidas", texto: "Medidas y colindancias" },
+          { icono: "doc", texto: "Boleta predial (año en curso)" },
+          { icono: "agua", texto: "Boleta de agua (último bimestre)" },
+          { icono: "regla", texto: "Alineamiento y número oficial" },
+          { icono: "plano", texto: "Planos arquitectónicos o croquis acotado" },
+          { icono: "pin", texto: "Ubicación exacta (Google Maps)" }
         ],
-        cta: 'Cotizar Avalúo en Hidalgo →',
-        inputValue: 'Hidalgo'
+        propietario: [
+          { icono: "id", texto: "INE vigente del vendedor / propietario" },
+          { icono: "id", texto: "CURP" },
+          { icono: "doc", texto: "Constancia de Situación Fiscal (RFC)" }
+        ],
+        solicitanteTitulo: "ACREDITADO / SOLICITANTE",
+        solicitante: [
+          { icono: "doc", texto: "Folio o solicitud de crédito del organismo" },
+          { icono: "id", texto: "INE vigente (ambos lados)" },
+          { icono: "id", texto: "CURP y Constancia de Situación Fiscal (RFC)" },
+          { icono: "pin", texto: "Datos de contacto para agendar visita física" }
+        ]
+      },
+      comercial: {
+        badge: "VALOR DE MERCADO · ASESORÍA",
+        titulo: "Avalúo Comercial / Opinión de Valor",
+        descripcion:
+          "Estudios comparativos de mercado y referencia patrimonial para operaciones privadas, compraventa o fijación de precio competitivo.",
+        enfoque:
+          "Casas, departamentos, locales comerciales y terrenos en Edo. Méx., CDMX e Hidalgo.",
+        servicio: "Avalúo Comercial",
+        asunto: "Nombre del solicitante · Tipo de inmueble",
+        inmueble: [
+          { icono: "pin", texto: "Ubicación exacta (Google Maps)" },
+          { icono: "medidas", texto: "Superficie de terreno y construcción" },
+          { icono: "doc", texto: "Escritura o boleta predial (recomendado en avalúo comercial)" },
+          { icono: "plano", texto: "Planos o croquis de distribución (si cuenta con ellos)" }
+        ],
+        propietario: [
+          { icono: "id", texto: "Datos generales del solicitante o propietario" },
+          { icono: "doc", texto: "Uso actual y estado de conservación del inmueble" }
+        ],
+        solicitanteTitulo: "DATOS COMPLEMENTARIOS",
+        solicitante: [
+          { icono: "doc", texto: "Finalidad del estudio (compraventa, referencia, inversión)" },
+          { icono: "grafica", texto: "Amenidades, remodelaciones o características especiales" },
+          { icono: "pin", texto: "Disponibilidad de horario para inspección física" }
+        ]
       }
     };
 
-    function seleccionarEstadoCobertura(estadoKey) {
-      const data = datosEstadosCobertura[estadoKey];
-      if (!data) return;
+    const docPanel = document.getElementById("docPanel");
+    const tabBtns = document.querySelectorAll(".tab-btn");
 
-      document.getElementById('estado-badge').textContent = data.badge;
-      document.getElementById('estado-titulo').textContent = data.titulo;
-      document.getElementById('estado-desc').textContent = data.desc;
-      document.getElementById('estado-cta').textContent = data.cta;
+    function renderLista(items) {
+      return items
+        .map(
+          (item) => `
+          <li>
+            ${iconos[item.icono] || iconos.doc}
+            <span>${item.texto}</span>
+          </li>`
+        )
+        .join("");
+    }
 
-      const lista = document.getElementById('estado-zonas');
-      lista.innerHTML = data.zonas.map(z => `<li>• ${z}</li>`).join('');
+    function renderTab(key) {
+      const item = guias[key];
+      docPanel.innerHTML = `
+        <div class="doc-layout">
+          <div class="doc-intro">
+            <div>
+              <span class="doc-pill">${item.badge}</span>
+              <h3>${item.titulo}</h3>
+              <p class="doc-desc">${item.descripcion}</p>
+              <div class="enfoque-box">
+                <span class="enfoque-label">ENFOQUE PRINCIPAL</span>
+                <p>${item.enfoque}</p>
+              </div>
+            </div>
+            <div>
+              <a href="#contacto" class="btn btn-dorado" data-servicio-tab="${item.servicio}">COTIZAR ESTE TRÁMITE →</a>
+            </div>
+          </div>
 
-      ['edomex', 'cdmx', 'hidalgo'].forEach(key => {
-        const btn = document.getElementById(`tab-estado-${key}`);
-        if (!btn) return;
-        if (key === estadoKey) {
-          btn.style.background = '#1C1917';
-          btn.style.color = '#F7F5F0';
-          btn.style.borderColor = '#8C6A3E';
-        } else {
-          btn.style.background = '#FFFDF9';
-          btn.style.color = '#1C1917';
-          btn.style.borderColor = 'rgba(26,24,23,0.18)';
-        }
-      });
+          <div class="doc-col-stack">
+            <div class="req-card">
+              <div class="req-card-title">INFORMACIÓN DEL INMUEBLE</div>
+              <ul class="req-list">${renderLista(item.inmueble)}</ul>
+            </div>
+            <div class="req-card">
+              <div class="req-card-title">PROPIETARIO</div>
+              <ul class="req-list">${renderLista(item.propietario)}</ul>
+            </div>
+          </div>
 
-      const locInput = document.getElementById('calc-location');
-      if (locInput) {
-        locInput.value = data.inputValue;
-        locInput.dispatchEvent(new Event('input', { bubbles: true }));
+          <div class="doc-col-stack">
+            <div class="req-card">
+              <div class="req-card-title">${item.solicitanteTitulo}</div>
+              <ul class="req-list">${renderLista(item.solicitante)}</ul>
+            </div>
+            <div class="req-card">
+              <div class="req-card-title">INSTRUCCIONES DE ENVÍO</div>
+              <p class="envio-intro">
+                Toda la documentación debe enviarse en formato PDF, legible y ordenada.
+              </p>
+              <a class="envio-pill" href="mailto:inglitzyaguirre@azvaluaciones.com?subject=${encodeURIComponent(item.titulo)}">
+                <span>Enviar a: inglitzyaguirre@azvaluaciones.com</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+              <p class="envio-meta"><strong>Asunto:</strong> ${item.asunto}</p>
+              <p class="envio-meta" style="margin-bottom: 4px;"><strong>Notas importantes:</strong></p>
+              <ul class="envio-notas">
+                <li>Incluir en el cuerpo del correo el enlace de ubicación y el valor de operación.</li>
+                <li>Si no cuenta con el plano, ofrecemos el servicio de levantamiento y elaboración (sujeto a cotización).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      const ctaBtn = docPanel.querySelector("[data-servicio-tab]");
+      if (ctaBtn) {
+        ctaBtn.addEventListener("click", () => {
+          document.getElementById("tipoAvaluo").value = ctaBtn.dataset.servicioTab;
+        });
       }
     }
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach((b) => {
+          b.classList.remove("activa");
+          b.setAttribute("aria-selected", "false");
+        });
+        btn.classList.add("activa");
+        btn.setAttribute("aria-selected", "true");
+        renderTab(btn.dataset.tab);
+      });
+    });
+
+    renderTab("linea2");
+
+    // Copiar correo
+    document.getElementById("btnCopiarCorreo").addEventListener("click", async () => {
+      const correo = "inglitzyaguirre@azvaluaciones.com";
+      const textoSpan = document.getElementById("textoCopiarCorreo");
+      try {
+        await navigator.clipboard.writeText(correo);
+        textoSpan.textContent = "Copiado ✓";
+        setTimeout(() => {
+          textoSpan.textContent = "Copiar";
+        }, 2500);
+      } catch {
+        textoSpan.textContent = correo;
+      }
+    });
+
+    // Seleccionar servicio desde tarjetas
+    document.querySelectorAll("[data-servicio]").forEach((link) => {
+      link.addEventListener("click", () => {
+        const select = document.getElementById("tipoAvaluo");
+        select.value = link.dataset.servicio;
+      });
+    });
+
+    // Envío de formulario
+    document.getElementById("formCotizacion").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value.trim();
+      const contacto = document.getElementById("contactoInput").value.trim();
+      const tipo = document.getElementById("tipoAvaluo").value;
+      const entidad = document.getElementById("entidad").value;
+      const municipio = document.getElementById("municipio").value.trim();
+
+      const cuerpo = `Nombre: ${nombre}\nContacto: ${contacto}\nTipo de avalúo: ${tipo}\nEntidad: ${entidad}${municipio ? `\nMunicipio/Alcaldía: ${municipio}` : ""}`;
+      const mailto = `mailto:inglitzyaguirre@azvaluaciones.com?subject=${encodeURIComponent(`Cotización ${tipo} - ${nombre}`)}&body=${encodeURIComponent(cuerpo)}`;
+
+      const msgEl = document.getElementById("mensajeEnvio");
+      msgEl.innerHTML = `Solicitud preparada para <strong>${nombre}</strong> (${tipo} · ${entidad}). <a href="${mailto}" style="color: var(--vino); text-decoration: underline;">Abrir en tu correo</a> o envíala a <strong>inglitzyaguirre@azvaluaciones.com</strong>.`;
+    });
   </script>
 </body>
 </html>
